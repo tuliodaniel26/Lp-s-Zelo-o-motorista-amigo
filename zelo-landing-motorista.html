@@ -83,15 +83,15 @@
           <circle cx="285" cy="213" r="12" fill="#0A0A0A"/>
           <circle cx="285" cy="213" r="4" fill="#FAFAFA"/>
           <!-- open door -->
-          <path d="M242 163 L270 163 L280 183 L248 195 Z" fill="#DC2626" opacity="0.85"/>
+          <path d="M242 163 L270 163 L280 183 L248 195 Z" fill="#6D1523" opacity="0.85"/>
           <!-- motorista uniformizado entrando -->
           <circle cx="105" cy="185" r="13" fill="#0A0A0A"/>
           <path d="M85 245 Q105 205 125 245 L125 250 L85 250 Z" fill="#0A0A0A"/>
           <!-- crachá / identificação -->
-          <rect x="95" y="215" width="20" height="14" rx="2" fill="#FAFAFA" stroke="#DC2626" stroke-width="1.5"/>
+          <rect x="95" y="215" width="20" height="14" rx="2" fill="#FAFAFA" stroke="#6D1523" stroke-width="1.5"/>
           <!-- chave na mão -->
-          <circle cx="140" cy="220" r="5" fill="none" stroke="#DC2626" stroke-width="2"/>
-          <rect x="144" y="218" width="12" height="3" fill="#DC2626"/>
+          <circle cx="140" cy="220" r="5" fill="none" stroke="#6D1523" stroke-width="2"/>
+          <rect x="144" y="218" width="12" height="3" fill="#6D1523"/>
         </svg>
       </div>
     </div>
@@ -111,12 +111,12 @@
           <p class="text-gray-500 mt-2">Você dirige o veículo do próprio cliente. Sem gasto com combustível, manutenção, seguro ou depreciação do seu carro.</p>
         </div>
 
-        <div class="reveal bg-white rounded-2xl p-6 border border-gray-200 hover:border-gray-900 transition-colors duration-300">
-          <div class="bg-white border border-gray-200 rounded-full p-3 w-fit">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <div class="reveal bg-accent text-white rounded-2xl p-6">
+          <div class="bg-white/10 rounded-full p-3 w-fit">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
           </div>
           <h3 class="font-semibold text-lg mt-4">Ganha 2,5 a 3x mais por corrida</h3>
-          <p class="text-gray-500 mt-2">Você recebe entre 2,5 e 3 vezes o valor pago em aplicativos terceiros por corrida — o suficiente para cobrir seu próprio retorno com folga, sem depender de ninguém.</p>
+          <p class="text-white/80 mt-2">Você recebe entre 2,5 e 3 vezes o valor pago em aplicativos terceiros por corrida — o suficiente para cobrir seu próprio retorno com folga, sem depender de ninguém.</p>
         </div>
 
         <div class="reveal bg-white rounded-2xl p-6 border border-gray-200 hover:border-gray-900 transition-colors duration-300">
@@ -142,36 +142,101 @@
   </section>
 
   <!-- COMO FUNCIONA -->
-  <section class="py-16 lg:py-24 px-6 lg:px-8">
-    <div class="max-w-[1200px] mx-auto">
+  <section id="como-funciona" class="py-16 lg:py-24 px-6 lg:px-8 bg-accent text-white overflow-hidden">
+    <div class="max-w-[1100px] mx-auto">
       <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-center mb-16 reveal">Como funciona para você</h2>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
-        <div class="step-item relative step-connector reveal">
-          <span class="text-4xl font-extrabold text-gray-200">01</span>
-          <h3 class="font-semibold text-base mt-3">Candidate-se</h3>
-          <p class="text-gray-500 mt-2 text-sm">Preencha o formulário abaixo com seus dados e disponibilidade.</p>
-        </div>
-        <div class="step-item relative step-connector reveal">
-          <span class="text-4xl font-extrabold text-gray-200">02</span>
-          <h3 class="font-semibold text-base mt-3">Verificação</h3>
-          <p class="text-gray-500 mt-2 text-sm">Conferimos sua CNH e antecedentes antes de liberar seu acesso.</p>
-        </div>
-        <div class="step-item relative step-connector reveal">
-          <span class="text-4xl font-extrabold text-gray-200">03</span>
-          <h3 class="font-semibold text-base mt-3">Escala de plantão</h3>
-          <p class="text-gray-500 mt-2 text-sm">Você define os dias e horários em que quer atuar.</p>
-        </div>
-        <div class="step-item relative reveal">
-          <span class="text-4xl font-extrabold text-gray-200">04</span>
-          <h3 class="font-semibold text-base mt-3">Recebe o chamado e dirige</h3>
-          <p class="text-gray-500 mt-2 text-sm">Vai até o cliente e dirige o carro dele até o destino.</p>
+      <div class="relative">
+        <!-- Linha conectora desktop -->
+        <svg id="connector-mot" class="hidden lg:block absolute top-16 left-0 w-full" height="4" viewBox="0 0 1000 4" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="130" y1="2" x2="870" y2="2" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="6 6"/>
+          <line id="connector-mot-animated" x1="130" y1="2" x2="870" y2="2" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-dasharray="740" stroke-dashoffset="740" style="transition:stroke-dashoffset 1.4s ease"/>
+        </svg>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6">
+
+          <div class="step-mot reveal flex flex-col items-center text-center lg:items-start lg:text-left">
+            <div class="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-5 step-icon-mot" style="transition:transform 0.4s ease,box-shadow 0.4s ease">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <span class="text-5xl font-extrabold text-white/15 leading-none mb-3">01</span>
+            <h3 class="font-bold text-lg mb-2">Candidate-se</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Preencha o formulário com seus dados e disponibilidade. Leva menos de 2 minutos.</p>
+          </div>
+
+          <div class="step-mot reveal flex flex-col items-center text-center lg:items-start lg:text-left">
+            <div class="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-5 step-icon-mot" style="transition:transform 0.4s ease,box-shadow 0.4s ease">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+            </div>
+            <span class="text-5xl font-extrabold text-white/15 leading-none mb-3">02</span>
+            <h3 class="font-bold text-lg mb-2">Verificação</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Conferimos sua CNH e antecedentes antes de liberar seu acesso à equipe.</p>
+          </div>
+
+          <div class="step-mot reveal flex flex-col items-center text-center lg:items-start lg:text-left">
+            <div class="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-5 step-icon-mot" style="transition:transform 0.4s ease,box-shadow 0.4s ease">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <span class="text-5xl font-extrabold text-white/15 leading-none mb-3">03</span>
+            <h3 class="font-bold text-lg mb-2">Escala de plantão</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Você define os dias e horários em que quer atuar, dentro dos plantões disponíveis.</p>
+          </div>
+
+          <div class="step-mot reveal flex flex-col items-center text-center lg:items-start lg:text-left">
+            <div class="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-5 step-icon-mot" style="transition:transform 0.4s ease,box-shadow 0.4s ease">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M5 17h14M5 17a2 2 0 100 4 2 2 0 000-4zm14 0a2 2 0 100 4 2 2 0 000-4zM5 17V7a2 2 0 012-2h6l4 4h2a2 2 0 012 2v6"/></svg>
+            </div>
+            <span class="text-5xl font-extrabold text-white/15 leading-none mb-3">04</span>
+            <h3 class="font-bold text-lg mb-2">Recebe o chamado e dirige</h3>
+            <p class="text-white/70 text-sm leading-relaxed">Vai até o cliente e dirige o carro dele até o destino. Simples assim.</p>
+          </div>
+
         </div>
       </div>
 
-      <div class="mt-12 bg-gray-50 border border-gray-200 rounded-2xl p-8 reveal">
+      <div class="mt-14 bg-white/10 border border-white/20 rounded-2xl p-8 reveal">
         <h3 class="font-semibold text-lg mb-2">E depois de deixar o cliente, como eu volto?</h3>
-        <p class="text-gray-500">Por conta própria — e isso não pesa no seu bolso. Como o ZELO paga entre 2,5 e 3 vezes o valor de uma corrida em aplicativos terceiros, o custo do seu retorno se torna irrisório perto do que você acabou de ganhar. Não existe segunda equipe nem espera: você decide como e quando voltar.</p>
+        <p class="text-white/70">Por conta própria — e isso não pesa no seu bolso. Como o ZELO paga entre 2,5 e 3 vezes o valor de uma corrida em aplicativos terceiros, o custo do seu retorno se torna irrisório perto do que você acabou de ganhar. Você decide como e quando voltar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULADORA MOTORISTA -->
+  <section id="calculadora" class="py-16 lg:py-24 px-6 lg:px-8">
+    <div class="max-w-[700px] mx-auto">
+      <div class="text-center mb-10 reveal">
+        <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">Simule quanto você ganha por corrida</h2>
+        <p class="text-gray-500 mt-4 text-lg">Informe a distância e o tempo de uma corrida e veja quanto entra no seu bolso — comparado a um app comum.</p>
+      </div>
+
+      <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 reveal">
+        <div class="grid sm:grid-cols-2 gap-6 mb-8">
+          <div>
+            <label for="calc-mot-km" class="block text-sm font-medium mb-1.5">Distância (km)</label>
+            <input type="number" id="calc-mot-km" min="0" step="1" value="8"
+                   class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:border-gray-900 outline-none transition-colors bg-white">
+          </div>
+          <div>
+            <label for="calc-mot-min" class="block text-sm font-medium mb-1.5">Tempo (min)</label>
+            <input type="number" id="calc-mot-min" min="0" step="1" value="15"
+                   class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:border-gray-900 outline-none transition-colors bg-white">
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-black text-white rounded-2xl p-6 text-center">
+            <p class="text-sm text-gray-400 uppercase tracking-wide">Você recebe · valor simulado</p>
+            <p class="text-3xl lg:text-4xl font-extrabold mt-2 text-accent"><span id="calc-mot-liquido">R$ 22,86</span>*</p>
+            <p class="text-xs text-gray-400 mt-2">75% do valor da corrida</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center flex flex-col justify-center">
+            <p class="text-sm text-gray-500 uppercase tracking-wide">Mesma corrida em app comum</p>
+            <p class="text-2xl font-bold mt-2 text-gray-400"><span id="calc-mot-outro">R$ 15,95</span></p>
+            <p class="text-xs text-accent font-semibold mt-2" id="calc-mot-diferenca">+R$ 6,91 a mais com o ZELO</p>
+          </div>
+        </div>
+
+        <p class="text-xs text-gray-400 mt-4 text-center">*Este valor é apenas uma <strong class="text-gray-500">simulação estimada</strong> para corrida noturna e não representa um ganho garantido. O modelo de pagamento é detalhado e confirmado na etapa de seleção.</p>
       </div>
     </div>
   </section>
@@ -183,19 +248,19 @@
 
       <div class="grid sm:grid-cols-2 gap-4 reveal">
         <div class="flex items-start gap-3 bg-white rounded-2xl p-5 border border-gray-200">
-          <svg class="shrink-0 mt-0.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <svg class="shrink-0 mt-0.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6D1523" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           <span class="font-medium">CNH categoria B, sem restrição grave</span>
         </div>
         <div class="flex items-start gap-3 bg-white rounded-2xl p-5 border border-gray-200">
-          <svg class="shrink-0 mt-0.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <svg class="shrink-0 mt-0.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6D1523" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           <span class="font-medium">Idade mínima de 21 anos</span>
         </div>
         <div class="flex items-start gap-3 bg-white rounded-2xl p-5 border border-gray-200">
-          <svg class="shrink-0 mt-0.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <svg class="shrink-0 mt-0.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6D1523" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           <span class="font-medium">Disponibilidade para horário noturno, principalmente sexta e sábado</span>
         </div>
         <div class="flex items-start gap-3 bg-white rounded-2xl p-5 border border-gray-200">
-          <svg class="shrink-0 mt-0.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <svg class="shrink-0 mt-0.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6D1523" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           <span class="font-medium">Antecedentes criminais limpos</span>
         </div>
       </div>
@@ -209,17 +274,17 @@
 
       <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
         <div class="reveal bg-gray-50 rounded-2xl p-8 text-center">
-          <svg class="mx-auto" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          <svg class="mx-auto" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D1523" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
           <h3 class="font-semibold text-lg mt-4">Pagamento transparente</h3>
           <p class="text-gray-500 mt-2">Você sabe exatamente quanto recebe por corrida, sem surpresa.</p>
         </div>
         <div class="reveal bg-gray-50 rounded-2xl p-8 text-center">
-          <svg class="mx-auto" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
+          <svg class="mx-auto" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D1523" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
           <h3 class="font-semibold text-lg mt-4">Contato direto com o fundador</h3>
           <p class="text-gray-500 mt-2">Na fase piloto, você fala direto com quem toma as decisões.</p>
         </div>
         <div class="reveal bg-gray-50 rounded-2xl p-8 text-center">
-          <svg class="mx-auto" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+          <svg class="mx-auto" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D1523" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
           <h3 class="font-semibold text-lg mt-4">Processo seletivo real</h3>
           <p class="text-gray-500 mt-2">Verificação de documentos e antecedentes antes de qualquer motorista começar a atuar.</p>
         </div>
@@ -511,6 +576,84 @@
       submitButton.textContent = 'Enviar candidatura';
     }
   });
+
+  // ===== CALCULADORA DE GANHOS (motorista) =====
+  // Parâmetros de tarifa ZELO — edite aqui se os valores mudarem
+  // (devem ficar iguais aos da página do cliente e da planilha operacional)
+  const TARIFA = {
+    bandeirada: 6,       // R$ partida
+    precoKm: 2,          // R$ por km
+    precoMin: 0.30,      // R$ por minuto
+    corridaMinima: 18,   // R$ nenhuma corrida sai abaixo disso
+    adicNoturno: 0.15,   // 15% (operação é 100% noturna)
+    comissao: 0.25,      // ZELO fica com 25%, motorista com 75%
+    // Benchmark apps terceiros (referência: tabela de mercado BH 2026)
+    outroBandeirada: 1.8,
+    outroKm: 1.3,
+    outroMin: 0.25,
+  };
+
+  function calcularPrecoZelo(km, minutos) {
+    const subtotal = TARIFA.bandeirada + (km * TARIFA.precoKm) + (minutos * TARIFA.precoMin);
+    const adicNoturno = subtotal * TARIFA.adicNoturno;
+    const precoAntesMinima = subtotal + adicNoturno;
+    return Math.max(precoAntesMinima, TARIFA.corridaMinima);
+  }
+
+  function calcularPrecoOutro(km, minutos) {
+    return TARIFA.outroBandeirada + (km * TARIFA.outroKm) + (minutos * TARIFA.outroMin);
+  }
+
+  function formatarReal(valor) {
+    return 'R$ ' + valor.toFixed(2).replace('.', ',');
+  }
+
+  const motKm = document.getElementById('calc-mot-km');
+  const motMin = document.getElementById('calc-mot-min');
+  const motLiquido = document.getElementById('calc-mot-liquido');
+  const motOutro = document.getElementById('calc-mot-outro');
+  const motDiferenca = document.getElementById('calc-mot-diferenca');
+
+  function atualizarCalcMotorista() {
+    const km = parseFloat(motKm.value) || 0;
+    const minutos = parseFloat(motMin.value) || 0;
+    const precoZelo = calcularPrecoZelo(km, minutos);
+    const liquidoMotorista = precoZelo * (1 - TARIFA.comissao); // motorista fica com 75%
+    const precoOutro = calcularPrecoOutro(km, minutos);
+    const diferenca = liquidoMotorista - precoOutro;
+
+    motLiquido.textContent = formatarReal(liquidoMotorista);
+    motOutro.textContent = formatarReal(precoOutro);
+
+    if (diferenca > 0) {
+      motDiferenca.textContent = `+${formatarReal(diferenca)} a mais com o ZELO`;
+      motDiferenca.classList.remove('text-gray-400');
+      motDiferenca.classList.add('text-accent');
+    } else {
+      motDiferenca.textContent = 'Compare o valor líquido por corrida';
+      motDiferenca.classList.remove('text-accent');
+      motDiferenca.classList.add('text-gray-400');
+    }
+  }
+
+  // ===== LINHA CONECTORA ANIMADA (Como Funciona — motorista) =====
+  const connectorMot = document.getElementById('connector-mot-animated');
+  if (connectorMot) {
+    const secMot = document.getElementById('como-funciona');
+    const obsMot = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          setTimeout(() => { connectorMot.style.strokeDashoffset = '0'; }, 400);
+          obsMot.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    if (secMot) obsMot.observe(secMot);
+    document.querySelectorAll('.step-icon-mot').forEach(icon => {
+      icon.addEventListener('mouseenter', () => { icon.style.transform='translateY(-4px)'; icon.style.boxShadow='0 12px 32px rgba(0,0,0,0.25)'; });
+      icon.addEventListener('mouseleave', () => { icon.style.transform='translateY(0)'; icon.style.boxShadow='none'; });
+    });
+  }
 </script>
 
 </body>
