@@ -10,7 +10,8 @@
  *  5. Copie a URL que termina em /exec e coloque em FORM_ENDPOINT no site.
  */
 
-// E-mail que recebe um aviso a cada novo cadastro
+// E-mail da ZELO que recebe um aviso a cada novo cadastro.
+// O dono da planilha (quem implantou o script) também recebe, automaticamente.
 const EMAIL_AVISO = 'zeloomotoristaamigo@gmail.com';
 
 const DISPONIBILIDADE = {
@@ -101,8 +102,10 @@ function avisarPorEmail(form, dados) {
   try {
     const linhas = form.colunas.slice(1, -1).map((col, i) => `${col}: ${form.linha(dados)[i] || '-'}`);
     const numero = String(dados.whatsapp || '').replace(/\D/g, '');
+    const dono = Session.getEffectiveUser().getEmail();
+    const destinatarios = [...new Set([dono, EMAIL_AVISO].filter(Boolean))].join(',');
     MailApp.sendEmail({
-      to: EMAIL_AVISO,
+      to: destinatarios,
       subject: `ZELO — ${form.titulo}: ${dados.nome}`,
       body: `${linhas.join('\n')}\n\nResponder no WhatsApp: https://wa.me/55${numero}\n\n` +
             `Planilha: ${SpreadsheetApp.getActiveSpreadsheet().getUrl()}`,

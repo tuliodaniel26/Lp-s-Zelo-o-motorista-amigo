@@ -1,6 +1,6 @@
 # Como ativar os formulários (planilha Google)
 
-Feito uma vez, com a conta **zeloomotoristaamigo@gmail.com**. Leva ~10 minutos.
+Feito uma vez, com a conta Google que vai ser dona da planilha (hoje: a conta pessoal do fundador). Leva ~10 minutos. O dono da planilha e o e-mail da ZELO recebem um aviso a cada cadastro.
 
 1. Em drive.google.com, crie uma planilha chamada **ZELO — Cadastros do site**.
 2. Na planilha: **Extensões → Apps Script**. Apague o que estiver no editor e cole todo o conteúdo de `apps-script.gs`. Salve (ícone de disquete).
