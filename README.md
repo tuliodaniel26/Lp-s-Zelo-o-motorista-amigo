@@ -27,6 +27,6 @@ Compatível com qualquer host de arquivo estático: Vercel, Netlify, GitHub Page
 
 ## Pendências conhecidas
 
-- Número de WhatsApp ainda como placeholder (`5500000000000`) nas 4 páginas — substituir pelo número real.
+- WhatsApp oficial: +55 31 97361-9814 | E-mail: zeloomotoristaamigo@gmail.com
 - Logo em texto ("ZELO") na navbar/footer — trocar por SVG da marca quando aprovado.
 - Formulários (`/zelo-landing-page.html` e `/zelo-landing-motorista.html`) apontam para Cloud Functions cujo endpoint ainda é um placeholder — ver projeto `zelo-firebase-functions` para o backend.
