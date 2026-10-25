@@ -440,7 +440,7 @@
     </div>
     <div>
       <p class="font-semibold mb-2">Contato</p>
-      <a href="https://wa.me/5531973619814" class="block text-gray-500 hover:text-black transition-colors">WhatsApp</a>
+      <a href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20tenho%20interesse%20em%20ser%20motorista%20parceiro." class="block text-gray-500 hover:text-black transition-colors">WhatsApp</a>
       <a href="mailto:zeloomotoristaamigo@gmail.com" class="block text-gray-500 hover:text-black transition-colors">E-mail</a>
     </div>
   </div>
@@ -454,7 +454,7 @@
 </footer>
 
 <!-- FLOATING WHATSAPP BUTTON (para dúvidas rápidas) -->
-<a id="floating-wa" href="https://wa.me/5531973619814" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
+<a id="floating-wa" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20tenho%20interesse%20em%20ser%20motorista%20parceiro." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-success shadow-lg flex items-center justify-center hover:brightness-110 transition-opacity duration-200">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24z"/></svg>
 </a>
@@ -520,16 +520,27 @@
     cnhSelect.focus();
   });
 
-  // URL da Cloud Function — substituir pela URL real após o deploy
-  // (formato: https://southamerica-east1-SEU-PROJETO.cloudfunctions.net/candidaturaMotorista)
-  const CANDIDATURA_ENDPOINT = "https://southamerica-east1-SEU-PROJETO.cloudfunctions.net/candidaturaMotorista";
+  // ===== ENVIO DO FORMULÁRIO =====
+  // URL do Google Apps Script (planilha de candidaturas). Enquanto estiver vazia,
+  // o formulário envia os dados direto para o WhatsApp da ZELO.
+  const FORM_ENDPOINT = "";
+  const ZELO_WHATSAPP = "5531973619814";
+  const waLink = (msg) => `https://wa.me/${ZELO_WHATSAPP}?text=${encodeURIComponent(msg)}`;
 
   const form = document.getElementById('application-form');
   const submitButton = form.querySelector('button[type="submit"]');
   const formError = document.createElement('p');
-  formError.className = 'text-sm text-accent mt-3 text-center hidden';
-  formError.textContent = 'Não foi possível enviar. Tente novamente em instantes.';
+  formError.className = 'text-sm text-gray-500 mt-3 text-center hidden';
   formFields.appendChild(formError);
+
+  // Mensagem de WhatsApp com os dados preenchidos (usada como fallback)
+  const candidaturaMessage = (d) => {
+    const disp = document.getElementById('disponibilidade');
+    const dispTexto = disp.options[disp.selectedIndex].text;
+    return `Olá, ZELO! Quero me candidatar como motorista.\n\n` +
+      `Nome: ${d.nome}\nWhatsApp: ${d.whatsapp}\nCNH categoria B: Sim\n` +
+      `Disponibilidade: ${dispTexto}\nRegião: ${d.regiao}`;
+  };
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -553,29 +564,40 @@
 
     if (!valid) return;
 
+    const dados = {
+      tipo: 'motorista',
+      nome: document.getElementById('nome').value.trim(),
+      whatsapp: document.getElementById('whatsapp').value.trim(),
+      possuiCnh: document.getElementById('cnh').value,
+      disponibilidade: document.getElementById('disponibilidade').value,
+      regiao: document.getElementById('regiao').value.trim(),
+    };
+
+    // Planilha ainda não configurada: manda os dados pelo WhatsApp
+    if (!FORM_ENDPOINT) {
+      window.location.href = waLink(candidaturaMessage(dados));
+      return;
+    }
+
     formError.classList.add('hidden');
     submitButton.disabled = true;
     submitButton.textContent = 'Enviando...';
 
     try {
-      const response = await fetch(CANDIDATURA_ENDPOINT, {
+      // text/plain evita o preflight de CORS, que o Apps Script não suporta
+      const response = await fetch(FORM_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          nome: document.getElementById('nome').value.trim(),
-          whatsapp: document.getElementById('whatsapp').value.trim(),
-          possuiCnh: document.getElementById('cnh').value,
-          disponibilidade: document.getElementById('disponibilidade').value,
-          regiao: document.getElementById('regiao').value.trim(),
-        }),
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(dados),
       });
-
-      if (!response.ok) throw new Error('Falha no envio');
+      const result = await response.json();
+      if (!result.ok) throw new Error(result.erro || 'Falha no envio');
 
       formFields.classList.add('hidden');
       document.getElementById('form-success').classList.remove('hidden');
     } catch (error) {
       console.error('Erro ao enviar candidatura de motorista:', error);
+      formError.innerHTML = `Não foi possível enviar agora. <a href="${waLink(candidaturaMessage(dados))}" target="_blank" rel="noopener" class="underline text-gray-900 font-medium">Enviar pelo WhatsApp</a>`;
       formError.classList.remove('hidden');
       submitButton.disabled = false;
       submitButton.textContent = 'Enviar candidatura';

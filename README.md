@@ -10,6 +10,7 @@ zelo-landing-cliente.html      → Página para o passageiro (quem vai usar o se
 zelo-landing-motorista.html    → Página de recrutamento de motoristas
 zelo-landing-page.html         → Página para estabelecimentos parceiros (bares/restaurantes)
 zelo.min.css                   → CSS compilado do Tailwind (gerado via Tailwind CLI, não via CDN)
+formularios/apps-script.gs     → Backend dos formulários (Google Apps Script + planilha)
 ```
 
 ## Rodando localmente
@@ -23,10 +24,16 @@ npx serve .
 
 ## Deploy
 
-Compatível com qualquer host de arquivo estático: Vercel, Netlify, GitHub Pages, Cloudflare Pages. Recomendação: conectar este repositório ao Vercel ou Netlify para deploy automático a cada push.
+Publicado no Render (Static Site, publish directory `.`): cada push na `main` atualiza https://zelo-o-amigo.onrender.com em 1–2 min.
+
+## Contato e formulários
+
+- WhatsApp oficial: +55 31 97361-9814 | E-mail: zeloomotoristaamigo@gmail.com
+- Cada página abre o WhatsApp com uma mensagem pronta diferente, para identificar a origem do contato.
+- Formulários de parceiro e motorista enviam para uma planilha Google via Apps Script (`FORM_ENDPOINT` em cada página). Enquanto `FORM_ENDPOINT` estiver vazio — ou se o envio falhar — os dados preenchidos seguem pelo WhatsApp, então nenhum contato se perde. Ativação: `formularios/COMO-ATIVAR.md`.
 
 ## Pendências conhecidas
 
-- WhatsApp oficial: +55 31 97361-9814 | E-mail: zeloomotoristaamigo@gmail.com
 - Logo em texto ("ZELO") na navbar/footer — trocar por SVG da marca quando aprovado.
-- Formulários (`/zelo-landing-page.html` e `/zelo-landing-motorista.html`) apontam para Cloud Functions cujo endpoint ainda é um placeholder — ver projeto `zelo-firebase-functions` para o backend.
+- Preencher `FORM_ENDPOINT` nas duas páginas com a URL /exec do Apps Script (ver `formularios/COMO-ATIVAR.md`).
+- Imagens reais nos placeholders e domínio próprio.
