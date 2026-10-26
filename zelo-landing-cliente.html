@@ -22,6 +22,7 @@
   "priceRange": "$$"
 }
 </script>
+<link rel="preconnect" href="https://images.unsplash.com">
 <link rel="preload" href="assets/fonts/jost-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jost-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/zelo.css">
@@ -57,6 +58,7 @@
   <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3L12 4z"/><path style="stroke:var(--acc,currentColor)" d="M12 10v4.2M12 16.8v.01"/></symbol>
   <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13l1.5 5"/><path d="M4 9.5c0 1.5 1.2 2.5 2.7 2.5S9.3 11 9.3 9.5c0 1.5 1.2 2.5 2.7 2.5s2.7-1 2.7-2.5c0 1.5 1.2 2.5 2.6 2.5S20 11 20 9.5"/><path d="M5.5 12v8h13v-8"/><path style="stroke:var(--acc,currentColor)" d="M10 20v-4.5h4V20"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.4" r="3.6"/><path d="M5 20c.9-3.6 3.7-5.6 7-5.6s6.1 2 7 5.6"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5h3l1.6-2.5h6.8L17 8.5h3a1 1 0 011 1V18a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5a1 1 0 011-1z"/><circle style="stroke:var(--acc,currentColor)" cx="12" cy="13.3" r="3.4"/></symbol>
 </svg>
 
 <a class="z-skip" href="#conteudo">Pular para o conteúdo</a>
@@ -86,7 +88,7 @@
 
 <main id="conteudo">
 
-  <section class="z-hero" data-hero>
+  <section class="z-hero z-hero--story" data-hero>
     <div class="z-road" aria-hidden="true">
       <div class="z-road__plane">
         <div class="z-road__lamps z-road__lamps--top"></div>
@@ -100,21 +102,30 @@
       </div>
     </div>
     <div class="z-hero__veil"></div>
-    <div class="z-hero__stage">
-      <div class="z-hero__circle">
+    <div class="z-wrap z-hero__grid">
+      <div class="z-hero__copy">
         <h1 class="z-hero__title">
           <span class="l"><span style="--i:0">Bebeu? Não deixe</span></span>
           <span class="l"><span style="--i:1">seu carro pra trás.</span></span>
         </h1>
         <p class="z-hero__text">Enquanto você espera aplicativos terceiros, o ZELO já está a caminho, e leva você e o seu carro para casa. Sem voltar amanhã pra buscar nada.</p>
-        <div class="z-hero__links"><a class="z-more" href="#calculadora">Simular o preço</a></div>
         <a class="z-hero__action" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener">
           <span class="z-dot"><svg class="z-ico"><use href="#i-wa"/></svg></span>
           <span>Chamar no WhatsApp</span>
         </a>
+        <div class="z-hero__links"><a class="z-more" href="#calculadora">Simular o preço</a></div>
       </div>
+      <figure class="z-story" data-story="5200">
+        <div class="z-story__circle">
+          <img class="z-story__img is-active" src="https://images.unsplash.com/photo-1775652970082-50c1838f0d58?w=760&h=760&fit=crop&q=70&auto=format" srcset="https://images.unsplash.com/photo-1775652970082-50c1838f0d58?w=480&h=480&fit=crop&q=70&auto=format 480w, https://images.unsplash.com/photo-1775652970082-50c1838f0d58?w=760&h=760&fit=crop&q=70&auto=format 760w, https://images.unsplash.com/photo-1775652970082-50c1838f0d58?w=1100&h=1100&fit=crop&q=70&auto=format 1100w" sizes="(min-width: 1024px) 40vw, 76vw" width="760" height="760" alt="Casal caminhando à noite por uma rua iluminada" decoding="async" fetchpriority="high">
+          <img class="z-story__img" src="https://images.unsplash.com/photo-1574172528634-a26851ca0b4b?w=760&h=760&fit=crop&q=70&auto=format" srcset="https://images.unsplash.com/photo-1574172528634-a26851ca0b4b?w=480&h=480&fit=crop&q=70&auto=format 480w, https://images.unsplash.com/photo-1574172528634-a26851ca0b4b?w=760&h=760&fit=crop&q=70&auto=format 760w, https://images.unsplash.com/photo-1574172528634-a26851ca0b4b?w=1100&h=1100&fit=crop&q=70&auto=format 1100w" sizes="(min-width: 1024px) 40vw, 76vw" width="760" height="760" alt="Homem ao lado da porta aberta de um carro escuro à noite, com os faróis acesos" decoding="async" loading="eager">
+          <img class="z-story__img" src="https://images.unsplash.com/photo-1784959022721-d02bceebdb45?w=760&h=760&fit=crop&q=70&auto=format" srcset="https://images.unsplash.com/photo-1784959022721-d02bceebdb45?w=480&h=480&fit=crop&q=70&auto=format 480w, https://images.unsplash.com/photo-1784959022721-d02bceebdb45?w=760&h=760&fit=crop&q=70&auto=format 760w, https://images.unsplash.com/photo-1784959022721-d02bceebdb45?w=1100&h=1100&fit=crop&q=70&auto=format 1100w" sizes="(min-width: 1024px) 40vw, 76vw" width="760" height="760" alt="Garagem iluminada de uma casa à noite" decoding="async" loading="eager">
+        </div>
+        <span class="z-story__ring" aria-hidden="true"></span>
+        <div class="z-story__steps" role="group" aria-label="Cenas da história"><button class="z-story__step is-active" type="button" aria-pressed="true"><b>1</b><span>Saída do bar</span></button><button class="z-story__step" type="button" aria-pressed="false"><b>2</b><span>O motorista abre a porta</span></button><button class="z-story__step" type="button" aria-pressed="false"><b>3</b><span>Seu carro chega em casa</span></button></div>
+      </figure>
     </div>
-    <p class="z-hero__foot">Atendimento noturno em Belo Horizonte</p>
+    <p class="z-hero__foot">Atendimento noturno em todas as regionais de Belo Horizonte</p>
     <a class="z-hero__cue" href="#comparar" aria-label="Ir para o conteúdo"><svg class="z-ico"><use href="#i-down"/></svg></a>
   </section>
 
@@ -246,29 +257,54 @@
     <span class="z-watermark" aria-hidden="true">Simples assim</span>
   </section>
 
+
   <section class="z-section z-section--white" id="seguranca">
     <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(70vw,560px)" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
     <div class="z-wrap">
-      <div class="z-head"><h2 class="z-title">Sua segurança em primeiro lugar</h2></div>
-      <div class="z-cards">
-        <article class="z-card" data-reveal>
-          <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-shield"/></svg></div>
-          <h3>Motorista verificado</h3>
-          <p>Todo motorista ZELO passa por verificação antes de atender. Você sabe exatamente quem está dirigindo o seu carro.</p>
-        </article>
-        <article class="z-card" data-reveal style="--delay:0.12s">
-          <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-id"/></svg></div>
+      <div class="z-head z-head--stack">
+        <h2 class="z-title">Como garantimos sua segurança</h2>
+        <p class="z-lead">Você entrega a chave do seu carro para outra pessoa. Por isso, a confiança começa muito antes da corrida.</p>
+      </div>
+      <ol class="z-flow" data-flow>
+        <li class="z-flow__step">
+          <span class="z-flow__node"><svg class="z-ico"><use href="#i-id"/></svg></span>
+          <h3>CNH verificada</h3>
+          <p>Conferimos a CNH de cada motorista antes de liberar o acesso à equipe.</p>
+        </li>
+        <li class="z-flow__step">
+          <span class="z-flow__node"><svg class="z-ico"><use href="#i-shield"/></svg></span>
+          <h3>Antecedentes conferidos</h3>
+          <p>Nenhum motorista começa a atuar sem a checagem de antecedentes criminais.</p>
+        </li>
+        <li class="z-flow__step">
+          <span class="z-flow__node"><svg class="z-ico"><use href="#i-user"/></svg></span>
           <h3>Identificação antes da chegada</h3>
           <p>Você recebe o nome e a identificação do motorista antes dele chegar até você.</p>
-        </article>
-        <article class="z-card" data-reveal style="--delay:0.24s">
-          <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-voice"/></svg></div>
-          <h3>Atendimento humano</h3>
-          <p>Fase piloto com atendimento direto. Se precisar, você fala com gente de verdade, não com um chatbot.</p>
-        </article>
-      </div>
+        </li>
+        <li class="z-flow__step">
+          <span class="z-flow__node"><svg class="z-ico"><use href="#i-camera"/></svg></span>
+          <h3>Vistoria do carro por foto</h3>
+          <p>O estado do seu carro é registrado em fotos na retirada e na entrega.</p>
+        </li>
+      </ol>
+      <p class="z-flow__note" data-reveal><span class="z-circle"><svg class="z-ico"><use href="#i-voice"/></svg></span>Durante toda a fase piloto, o atendimento é humano: se precisar, você fala com gente de verdade pelo WhatsApp.</p>
     </div>
-    <span class="z-watermark" aria-hidden="true">Segurança</span>
+    <span class="z-watermark" aria-hidden="true">Confiança</span>
+  </section>
+
+
+  <section class="z-section z-night" id="regioes" data-play>
+    <div class="z-wrap z-regions">
+      <div class="z-regions__text" data-reveal>
+        <h2 class="z-title">Atendemos toda Belo Horizonte</h2>
+        <p class="z-lead">Do Barreiro a Venda Nova, o ZELO atende as nove regionais da cidade.</p>
+        <ul class="z-facts"><li><strong>9</strong> regionais</li><li><strong>487</strong> bairros</li><li><strong>332</strong> km²</li></ul>
+        <ul class="z-regions__list"><li><strong>Barreiro</strong>Milionários, Diamante, Lindéia</li><li><strong>Centro-Sul</strong>Savassi, Lourdes, Funcionários, Sion</li><li><strong>Leste</strong>Santa Tereza, Floresta, Sagrada Família</li><li><strong>Nordeste</strong>Cidade Nova, União, Palmares</li><li><strong>Noroeste</strong>Padre Eustáquio, Carlos Prates, Caiçaras</li><li><strong>Norte</strong>Primeiro de Maio, Tupi</li><li><strong>Oeste</strong>Buritis, Gutierrez, Prado</li><li><strong>Pampulha</strong>Castelo, Bandeirantes, Ouro Preto</li><li><strong>Venda Nova</strong>Venda Nova, Mantiqueira, Piratininga</li></ul>
+        <p class="z-source">Números da Prefeitura de Belo Horizonte (Prodabel). Mapa esquemático: cada círculo é proporcional à área da regional.</p>
+      </div>
+      <figure class="z-regions__map"><svg viewBox="0 0 420 600" data-smil role="img" aria-label="Mapa esquemático das nove regionais de Belo Horizonte, todas atendidas pelo ZELO, com carros circulando entre elas"><path class="z-reg-road" d="M165.0 116.2 L163.0 125.1"/><path class="z-reg-road" d="M221.2 80.0 L241.4 84.4"/><path class="z-reg-road" d="M294.3 144.5 L295.3 156.0"/><path class="z-reg-road" d="M210.4 195.1 L246.5 201.1"/><path class="z-reg-road" d="M127.7 242.0 L122.5 255.4"/><path class="z-reg-road" d="M169.8 243.0 L199.1 328.5"/><path class="z-reg-road" d="M304.9 264.0 L305.8 273.9"/><path class="z-reg-road" d="M144.6 327.0 L174.4 347.3"/><path class="z-reg-road" d="M269.9 343.2 L257.5 350.4"/><path class="z-reg-road" d="M107.0 347.9 L107.8 368.0"/><path class="z-reg-road" d="M169.8 394.4 L157.8 399.5"/><path class="z-reg-road" d="M96.3 470.2 L96.5 469.6"/><g class="z-reg-g"><title>Venda Nova: Venda Nova, Mantiqueira, Piratininga</title><circle class="z-reg" cx="175" cy="70" r="43.3"/><text class="z-reg-label" x="175" y="70">Venda Nova</text></g><g class="z-reg-g"><title>Norte: Primeiro de Maio, Tupi</title><circle class="z-reg" cx="290" cy="95" r="45.7"/><text class="z-reg-label" x="290" y="95">Norte</text></g><g class="z-reg-g"><title>Pampulha: Castelo, Bandeirantes, Ouro Preto</title><circle class="z-reg" cx="150" cy="185" r="57.2"/><text class="z-reg-label" x="150" y="185">Pampulha</text></g><g class="z-reg-g"><title>Nordeste: Cidade Nova, União, Palmares</title><circle class="z-reg" cx="300" cy="210" r="50.3"/><text class="z-reg-label" x="300" y="210">Nordeste</text></g><g class="z-reg-g"><title>Noroeste: Padre Eustáquio, Carlos Prates, Caiçaras</title><circle class="z-reg" cx="105" cy="300" r="43.9"/><text class="z-reg-label" x="105" y="300">Noroeste</text></g><g class="z-reg-g"><title>Leste: Santa Tereza, Floresta, Sagrada Família</title><circle class="z-reg" cx="310" cy="320" r="42.3"/><text class="z-reg-label" x="310" y="320">Leste</text></g><g class="z-reg-g"><title>Centro-Sul: Savassi, Lourdes, Funcionários, Sion</title><circle class="z-reg" cx="215" cy="375" r="45.1"/><text class="z-reg-label" x="215" y="375">Centro-Sul</text></g><g class="z-reg-g"><title>Oeste: Buritis, Gutierrez, Prado</title><circle class="z-reg" cx="110" cy="420" r="48.0"/><text class="z-reg-label" x="110" y="420">Oeste</text></g><g class="z-reg-g"><title>Barreiro: Milionários, Diamante, Lindéia</title><circle class="z-reg" cx="80" cy="530" r="58.6"/><text class="z-reg-label" x="80" y="530">Barreiro</text></g><circle class="z-reg-car" r="3.4"><animateMotion dur="3.2s" begin="-0.0s" repeatCount="indefinite" path="M165.0 116.2 L163.0 125.1 L165.0 116.2"/></circle><circle class="z-reg-car z-reg-car--red" r="3.4"><animateMotion dur="3.9s" begin="-0.9s" repeatCount="indefinite" path="M221.2 80.0 L241.4 84.4 L221.2 80.0"/></circle><circle class="z-reg-car" r="3.4"><animateMotion dur="4.6s" begin="-1.8s" repeatCount="indefinite" path="M294.3 144.5 L295.3 156.0 L294.3 144.5"/></circle><circle class="z-reg-car" r="3.4"><animateMotion dur="5.3s" begin="-2.7s" repeatCount="indefinite" path="M210.4 195.1 L246.5 201.1 L210.4 195.1"/></circle><circle class="z-reg-car z-reg-car--red" r="3.4"><animateMotion dur="3.2s" begin="-0.4s" repeatCount="indefinite" path="M127.7 242.0 L122.5 255.4 L127.7 242.0"/></circle><circle class="z-reg-car" r="3.4"><animateMotion dur="3.9s" begin="-0.6s" repeatCount="indefinite" path="M169.8 243.0 L199.1 328.5 L169.8 243.0"/></circle><circle class="z-reg-car" r="3.4"><animateMotion dur="4.6s" begin="-0.8s" repeatCount="indefinite" path="M304.9 264.0 L305.8 273.9 L304.9 264.0"/></circle><circle class="z-reg-car z-reg-car--red" r="3.4"><animateMotion dur="5.3s" begin="-1.0s" repeatCount="indefinite" path="M144.6 327.0 L174.4 347.3 L144.6 327.0"/></circle><circle class="z-reg-car" r="3.4"><animateMotion dur="3.2s" begin="-0.8s" repeatCount="indefinite" path="M269.9 343.2 L257.5 350.4 L269.9 343.2"/></circle><circle class="z-reg-car" r="3.4"><animateMotion dur="3.9s" begin="-0.3s" repeatCount="indefinite" path="M107.0 347.9 L107.8 368.0 L107.0 347.9"/></circle><circle class="z-reg-car z-reg-car--red" r="3.4"><animateMotion dur="4.6s" begin="-4.4s" repeatCount="indefinite" path="M169.8 394.4 L157.8 399.5 L169.8 394.4"/></circle><circle class="z-reg-car" r="3.4"><animateMotion dur="5.3s" begin="-4.6s" repeatCount="indefinite" path="M96.3 470.2 L96.5 469.6 L96.3 470.2"/></circle></svg></figure>
+    </div>
+    <span class="z-watermark" aria-hidden="true">Belo Horizonte</span>
   </section>
 
   <section class="z-section" id="faq">
@@ -293,7 +329,7 @@
         </details>
         <details>
           <summary>Funciona em toda Belo Horizonte?<span class="z-faq__icon" aria-hidden="true"></span></summary>
-          <div class="z-faq__body"><p>Estamos priorizando as regiões com maior concentração de bares e vida noturna na fase piloto.</p></div>
+          <div class="z-faq__body"><p>Sim. O ZELO atende as nove regionais de Belo Horizonte, do Barreiro a Venda Nova.</p></div>
         </details>
       </div>
     </div>
@@ -338,13 +374,14 @@
       </div>
     </div>
     <div class="z-footer__legal">
-      <p>&copy; 2026 ZELO — Belo Horizonte, MG</p>
+      <p>&copy; 2026 ZELO — Belo Horizonte, MG · <span class="z-credit">Fotos ilustrativas: <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></span></p>
       <div><a href="#">Política de Privacidade</a><a href="#">Termos de Uso</a></div>
     </div>
   </div>
 </footer>
 
 <a class="z-float" id="floating-wa" data-float href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener" aria-label="Falar com o ZELO no WhatsApp"><svg class="z-ico"><use href="#i-wa"/></svg></a>
+<div class="z-mbar"><a class="z-btn" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener"><svg class="z-ico"><use href="#i-wa"/></svg>Chamar no WhatsApp</a></div>
 
 <script src="assets/zelo.js" defer></script>
 <script>

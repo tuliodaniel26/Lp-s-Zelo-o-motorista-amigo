@@ -690,3 +690,151 @@ strong { font-weight: 600; }
 @media (max-width: 899.98px) {
   .z-hero__circle { background: radial-gradient(circle at 50% 120%, rgba(109,21,35,.4), rgba(109,21,35,0) 60%), rgba(15,15,19,.44); }
 }
+
+/* =========================================================================
+   Topo com história em fotos (3 cenas no círculo)
+   ========================================================================= */
+.z-hero--story { place-items: stretch; padding: calc(var(--z-header-h) + 28px) 0 76px; }
+.z-hero__grid { display: grid; gap: 30px; align-items: center; align-content: center; min-height: calc(100svh - var(--z-header-h) - 110px); }
+.z-hero__copy { position: relative; z-index: 2; }
+.z-hero--story .z-hero__title { font-size: clamp(30px, 3.7vw, 54px); line-height: 1.1; }
+.z-hero--story .z-hero__text { max-width: 40ch; font-size: 17px; color: rgba(255,255,255,.78); margin-top: 22px; }
+.z-hero--story .z-hero__action { position: static; translate: none; margin-top: 30px; }
+.z-hero--story .z-dot { width: 64px; height: 64px; }
+.z-hero--story .z-hero__links { margin-top: 22px; }
+.z-story { position: relative; display: grid; justify-items: center; gap: 20px; order: -1; }
+.z-story__circle {
+  --sd: min(76vw, 360px);
+  position: relative; width: var(--sd); aspect-ratio: 1; border-radius: 50%; overflow: hidden; isolation: isolate;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 40px 120px rgba(0,0,0,.55), 0 0 160px rgba(109,21,35,.5);
+  animation: zCircleIn 1.4s var(--z-ease) both;
+}
+.z-story__ring { position: absolute; width: calc(var(--sd) + 34px); aspect-ratio: 1; border-radius: 50%; top: -17px; left: 50%; translate: -50% 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); pointer-events: none; }
+.z-story__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.09); transition: opacity 1.3s ease, transform 7s linear; }
+.z-story__img.is-active { opacity: 1; transform: scale(1); }
+.z-story__circle::after { content: ""; position: absolute; inset: 0; border-radius: 50%; pointer-events: none; z-index: 1;
+  background: radial-gradient(circle at 50% 115%, rgba(109,21,35,.5), rgba(109,21,35,0) 55%), linear-gradient(to top, rgba(10,10,13,.3), transparent 45%); }
+.z-story__steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.z-story__step {
+  position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 6px; border-radius: 999px;
+  color: rgba(255,255,255,.72); font-size: 14px; background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12);
+  transition: color .3s, background .3s, box-shadow .3s;
+}
+.z-story__step b { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-weight: 500; font-size: 13px; background: rgba(255,255,255,.12); transition: background .3s; }
+.z-story__step.is-active { color: #fff; background: rgba(211,38,58,.2); box-shadow: inset 0 0 0 1px rgba(211,38,58,.6); }
+.z-story__step.is-active b { background: var(--z-red); }
+.z-story__step::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--z-red); transform: scaleX(0); transform-origin: left; }
+.z-story__step.is-active::after { animation: zProgress var(--story-dur, 5000ms) linear forwards; }
+.z-hero.is-paused .z-story__step.is-active::after { animation-play-state: paused; }
+@keyframes zProgress { to { transform: scaleX(1); } }
+@media (max-width: 599.98px) {
+  .z-story__step:not(.is-active) { padding: 6px; }
+  .z-story__step:not(.is-active) span { display: none; }
+}
+@media (min-width: 1024px) {
+  .z-hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; }
+  .z-story { order: 0; }
+  .z-story__circle { --sd: min(40vw, 560px, 66svh); }
+}
+
+/* =========================================================================
+   Barra fixa de WhatsApp no celular
+   ========================================================================= */
+.z-mbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; display: flex; gap: 10px; align-items: center;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(14,14,17,.9); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  box-shadow: 0 -1px 0 rgba(255,255,255,.08); transition: transform .35s var(--z-ease);
+}
+.z-mbar .z-btn { flex: 1; min-height: 52px; }
+.z-mbar__wa { width: 52px; height: 52px; flex: none; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--z-wine); }
+.z-mbar__wa .z-ico { width: 24px; height: 24px; }
+body.has-input-focus .z-mbar { transform: translateY(115%); }
+@media (min-width: 900px) { .z-mbar { display: none; } }
+@media (max-width: 899.98px) {
+  .z-float { display: none !important; }
+  body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+}
+
+/* =========================================================================
+   Fluxo "Como garantimos sua segurança"
+   ========================================================================= */
+.z-flow { position: relative; display: grid; gap: 34px; }
+.z-flow__step { position: relative; display: grid; grid-template-columns: 60px 1fr; column-gap: 20px; align-items: start; }
+.z-flow__node {
+  grid-row: span 2; position: relative; z-index: 1; width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--z-paper); color: var(--z-muted); box-shadow: inset 0 0 0 1.5px var(--z-line);
+  transition: background .5s, color .5s, box-shadow .5s, transform .5s var(--z-ease);
+}
+.z-section--white .z-flow__node { background: var(--z-mist); }
+.z-flow__node .z-ico { width: 26px; height: 26px; --acc: currentColor; }
+.z-flow__step h3 { font-weight: 400; font-size: 20px; line-height: 1.3; padding-top: 4px; }
+.z-flow__step p { color: var(--z-muted); font-size: 16px; margin-top: 6px; }
+.z-flow__step:not(:last-child)::before, .z-flow__step:not(:last-child)::after { content: ""; position: absolute; left: 29px; top: 66px; bottom: -30px; width: 2px; }
+.z-flow__step:not(:last-child)::before { background: var(--z-line); }
+.z-flow__step:not(:last-child)::after { background: var(--z-red); transform: scaleY(0); transform-origin: top; transition: transform .9s var(--z-ease); }
+.z-flow__step.is-done::after { transform: scaleY(1); }
+.z-flow__step.is-done .z-flow__node, .z-flow__step.is-current .z-flow__node { background: var(--z-red); color: #fff; box-shadow: 0 10px 30px var(--z-red-glow); }
+.z-flow__step.is-current .z-flow__node { transform: scale(1.1); }
+.z-flow__note { margin-top: 44px; display: flex; gap: 14px; align-items: center; font-size: 17px; max-width: 70ch; }
+.z-flow__note .z-circle { width: 46px; height: 46px; }
+@media (min-width: 900px) {
+  .z-flow { grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .z-flow__step { grid-template-columns: 1fr; }
+  .z-flow__node { grid-row: auto; margin-bottom: 22px; }
+  .z-flow__step:not(:last-child)::before, .z-flow__step:not(:last-child)::after { left: 72px; right: -16px; top: 29px; bottom: auto; width: auto; height: 2px; }
+  .z-flow__step:not(:last-child)::after { transform: scaleX(0); transform-origin: left; }
+  .z-flow__step.is-done::after { transform: scaleX(1); }
+}
+
+/* =========================================================================
+   Mapa das regionais de BH
+   ========================================================================= */
+.z-regions { display: grid; gap: 48px; align-items: center; }
+.z-regions__map { width: min(100%, 440px); justify-self: center; }
+.z-regions__map svg { width: 100%; height: auto; overflow: visible; }
+.z-reg { fill: rgba(109,21,35,.38); stroke: rgba(255,255,255,.2); stroke-width: 1; transition: fill .3s; }
+.z-reg-g:hover .z-reg { fill: rgba(211,38,58,.55); }
+.z-reg-label { fill: #fff; font: 400 14px var(--z-font); text-anchor: middle; dominant-baseline: middle; letter-spacing: .02em; pointer-events: none; }
+.z-reg-road { stroke: rgba(255,255,255,.14); stroke-width: 1.5; stroke-dasharray: 3 5; fill: none; }
+.z-reg-car { fill: #fff; }
+.z-reg-car--red { fill: #ff6b7a; }
+.z-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.z-facts li { padding: 8px 16px; border-radius: 999px; font-size: 15px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); color: #fff; }
+.z-facts li strong { font-weight: 500; }
+.z-regions__list { margin-top: 30px; display: grid; gap: 14px 28px; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.z-regions__list li { font-size: 15px; color: var(--z-on-night); line-height: 1.45; }
+.z-regions__list strong { display: block; color: #fff; font-weight: 500; font-size: 16px; }
+@media (min-width: 1024px) { .z-regions { grid-template-columns: 1.1fr .9fr; gap: 72px; } }
+
+/* =========================================================================
+   Fase piloto
+   ========================================================================= */
+.z-pilot { display: grid; gap: 1px; background: var(--z-line); border-radius: 8px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--z-line); }
+.z-pilot li { background: var(--z-paper); padding: 28px 26px; }
+.z-pilot strong { display: block; font-weight: 300; font-size: clamp(30px, 3vw, 40px); line-height: 1.1; color: var(--z-ink); }
+.z-pilot span { display: block; margin-top: 10px; color: var(--z-muted); font-size: 15px; line-height: 1.5; }
+@media (min-width: 760px) { .z-pilot { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .z-pilot { grid-template-columns: repeat(4, 1fr); } }
+.z-credit { font-size: 12px; color: rgba(255,255,255,.4); }
+.z-credit a { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .z-story__img { transition: none; transform: none; }
+  .z-story__step.is-active::after { animation: none; transform: scaleX(1); }
+}
+
+/* atributo hidden sempre vence (ex.: números do piloto ainda não publicados) */
+[hidden] { display: none !important; }
+/* leitura do título sobre a estrada: escurece o lado do texto */
+.z-hero--story .z-hero__veil {
+  background:
+    linear-gradient(90deg, rgba(12,12,15,.82) 0%, rgba(12,12,15,.5) 38%, rgba(12,12,15,0) 62%),
+    radial-gradient(ellipse 70% 45% at 50% 108%, var(--z-wine-glow), rgba(109,21,35,0) 70%),
+    linear-gradient(to bottom, rgba(12,12,15,.55) 0, rgba(12,12,15,0) 22%, rgba(12,12,15,0) 75%, rgba(12,12,15,.7) 100%);
+}
+@media (max-width: 1023.98px) {
+  .z-hero--story .z-hero__veil { background: linear-gradient(to bottom, rgba(12,12,15,.35) 0%, rgba(12,12,15,.55) 45%, rgba(12,12,15,.85) 100%), radial-gradient(ellipse 80% 40% at 50% 100%, var(--z-wine-glow), rgba(109,21,35,0) 70%); }
+}
+/* no celular a barra fixa já é o botão principal */
+@media (max-width: 899.98px) { .z-hero--story .z-hero__action { display: none; } }

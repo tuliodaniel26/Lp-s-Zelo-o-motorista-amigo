@@ -24,6 +24,7 @@
   "priceRange": "$$"
 }
 </script>
+<link rel="preconnect" href="https://images.unsplash.com">
 <link rel="preload" href="assets/fonts/jost-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jost-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/zelo.css">
@@ -59,6 +60,7 @@
   <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3L12 4z"/><path style="stroke:var(--acc,currentColor)" d="M12 10v4.2M12 16.8v.01"/></symbol>
   <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13l1.5 5"/><path d="M4 9.5c0 1.5 1.2 2.5 2.7 2.5S9.3 11 9.3 9.5c0 1.5 1.2 2.5 2.7 2.5s2.7-1 2.7-2.5c0 1.5 1.2 2.5 2.6 2.5S20 11 20 9.5"/><path d="M5.5 12v8h13v-8"/><path style="stroke:var(--acc,currentColor)" d="M10 20v-4.5h4V20"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.4" r="3.6"/><path d="M5 20c.9-3.6 3.7-5.6 7-5.6s6.1 2 7 5.6"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5h3l1.6-2.5h6.8L17 8.5h3a1 1 0 011 1V18a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5a1 1 0 011-1z"/><circle style="stroke:var(--acc,currentColor)" cx="12" cy="13.3" r="3.4"/></symbol>
 </svg>
 
 <a class="z-skip" href="#conteudo">Pular para o conteúdo</a>
@@ -88,7 +90,7 @@
 
 <main id="conteudo">
 
-  <section class="z-hero" data-hero>
+  <section class="z-hero z-hero--story" data-hero>
     <div class="z-road" aria-hidden="true">
       <div class="z-road__plane">
         <div class="z-road__lamps z-road__lamps--top"></div>
@@ -102,21 +104,30 @@
       </div>
     </div>
     <div class="z-hero__veil"></div>
-    <div class="z-hero__stage">
-      <div class="z-hero__circle">
+    <div class="z-wrap z-hero__grid">
+      <div class="z-hero__copy">
         <h1 class="z-hero__title">
           <span class="l"><span style="--i:0">A volta segura</span></span>
           <span class="l"><span style="--i:1">do seu cliente.</span></span>
         </h1>
         <p class="z-hero__text">O ZELO leva o seu cliente e o carro dele para casa no fim da noite. A parceria de divulgação é gratuita e, na fase piloto, ainda gera cashback para o seu estabelecimento.</p>
-        <div class="z-hero__links"><a class="z-more" href="#como-funciona">Ver como funciona</a><a class="z-more" href="#pacote">Pacote Parceiro</a></div>
         <a class="z-hero__action" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20quero%20cadastrar%20meu%20estabelecimento%20como%20parceiro." target="_blank" rel="noopener">
           <span class="z-dot"><svg class="z-ico"><use href="#i-wa"/></svg></span>
           <span>Falar no WhatsApp</span>
         </a>
+        <div class="z-hero__links"><a class="z-more" href="#como-funciona">Ver como funciona</a><a class="z-more" href="#pacote">Pacote Parceiro</a></div>
       </div>
+      <figure class="z-story" data-story="5200">
+        <div class="z-story__circle">
+          <img class="z-story__img is-active" src="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=760&h=760&fit=crop&q=70&auto=format" srcset="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=480&h=480&fit=crop&q=70&auto=format 480w, https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=760&h=760&fit=crop&q=70&auto=format 760w, https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=1100&h=1100&fit=crop&q=70&auto=format 1100w" sizes="(min-width: 1024px) 40vw, 76vw" width="760" height="760" alt="Pessoas de costas no balcão de um bar iluminado" decoding="async" fetchpriority="high">
+          <img class="z-story__img" src="https://images.unsplash.com/photo-1574172528634-a26851ca0b4b?w=760&h=760&fit=crop&q=70&auto=format" srcset="https://images.unsplash.com/photo-1574172528634-a26851ca0b4b?w=480&h=480&fit=crop&q=70&auto=format 480w, https://images.unsplash.com/photo-1574172528634-a26851ca0b4b?w=760&h=760&fit=crop&q=70&auto=format 760w, https://images.unsplash.com/photo-1574172528634-a26851ca0b4b?w=1100&h=1100&fit=crop&q=70&auto=format 1100w" sizes="(min-width: 1024px) 40vw, 76vw" width="760" height="760" alt="Homem ao lado da porta aberta de um carro escuro à noite, com os faróis acesos" decoding="async" loading="eager">
+          <img class="z-story__img" src="https://images.unsplash.com/photo-1784959022721-d02bceebdb45?w=760&h=760&fit=crop&q=70&auto=format" srcset="https://images.unsplash.com/photo-1784959022721-d02bceebdb45?w=480&h=480&fit=crop&q=70&auto=format 480w, https://images.unsplash.com/photo-1784959022721-d02bceebdb45?w=760&h=760&fit=crop&q=70&auto=format 760w, https://images.unsplash.com/photo-1784959022721-d02bceebdb45?w=1100&h=1100&fit=crop&q=70&auto=format 1100w" sizes="(min-width: 1024px) 40vw, 76vw" width="760" height="760" alt="Garagem iluminada de uma casa à noite" decoding="async" loading="eager">
+        </div>
+        <span class="z-story__ring" aria-hidden="true"></span>
+        <div class="z-story__steps" role="group" aria-label="Cenas da história"><button class="z-story__step is-active" type="button" aria-pressed="true"><b>1</b><span>Noite cheia no seu bar</span></button><button class="z-story__step" type="button" aria-pressed="false"><b>2</b><span>O motorista ZELO chega</span></button><button class="z-story__step" type="button" aria-pressed="false"><b>3</b><span>Seu cliente chega em casa</span></button></div>
+      </figure>
     </div>
-    <p class="z-hero__foot">Parcerias com bares e restaurantes de Belo Horizonte</p>
+    <p class="z-hero__foot">Parcerias com bares e restaurantes de toda Belo Horizonte</p>
     <a class="z-hero__cue" href="#problema" aria-label="Ir para o conteúdo"><svg class="z-ico"><use href="#i-down"/></svg></a>
   </section>
 
@@ -298,15 +309,39 @@
     <span class="z-watermark" aria-hidden="true">Por conta da casa</span>
   </section>
 
-  <section class="z-section z-section--white z-section--tight" id="confianca">
+
+  <section class="z-section z-section--white" id="confianca">
+    <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(70vw,560px)" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
     <div class="z-wrap">
-      <div class="z-head"><h2 class="z-title">Por que confiar no ZELO</h2></div>
-      <ul class="z-trust" data-reveal>
-        <li><span class="z-circle"><svg class="z-ico"><use href="#i-shield"/></svg></span>Motoristas verificados e selecionados</li>
-        <li><span class="z-circle"><svg class="z-ico"><use href="#i-user"/></svg></span>Atendimento direto com o fundador na fase piloto</li>
-        <li><span class="z-circle"><svg class="z-ico"><use href="#i-pin"/></svg></span>Projeto pensado e operado em Belo Horizonte</li>
-      </ul>
+      <div class="z-head z-head--stack">
+        <h2 class="z-title">Como garantimos a segurança do seu cliente</h2>
+        <p class="z-lead">Seu cliente entrega a chave do próprio carro. Por isso, a confiança começa muito antes da corrida.</p>
+      </div>
+      <ol class="z-flow" data-flow>
+        <li class="z-flow__step">
+          <span class="z-flow__node"><svg class="z-ico"><use href="#i-id"/></svg></span>
+          <h3>CNH verificada</h3>
+          <p>Conferimos a CNH de cada motorista antes de liberar o acesso à equipe.</p>
+        </li>
+        <li class="z-flow__step">
+          <span class="z-flow__node"><svg class="z-ico"><use href="#i-shield"/></svg></span>
+          <h3>Antecedentes conferidos</h3>
+          <p>Nenhum motorista começa a atuar sem a checagem de antecedentes criminais.</p>
+        </li>
+        <li class="z-flow__step">
+          <span class="z-flow__node"><svg class="z-ico"><use href="#i-user"/></svg></span>
+          <h3>Identificação antes da chegada</h3>
+          <p>O cliente recebe o nome e a identificação do motorista antes dele chegar.</p>
+        </li>
+        <li class="z-flow__step">
+          <span class="z-flow__node"><svg class="z-ico"><use href="#i-camera"/></svg></span>
+          <h3>Vistoria do carro por foto</h3>
+          <p>O estado do carro do cliente é registrado em fotos na retirada e na entrega.</p>
+        </li>
+      </ol>
+      <p class="z-flow__note" data-reveal><span class="z-circle"><svg class="z-ico"><use href="#i-voice"/></svg></span>Durante toda a fase piloto, o atendimento é humano: se precisar, você fala com gente de verdade pelo WhatsApp.</p>
     </div>
+    <span class="z-watermark" aria-hidden="true">Confiança</span>
   </section>
 
   <section class="z-section" id="comecar">
@@ -383,7 +418,7 @@
         </details>
         <details>
           <summary>Vocês atendem toda Belo Horizonte?<span class="z-faq__icon" aria-hidden="true"></span></summary>
-          <div class="z-faq__body"><p>Estamos priorizando regiões com maior concentração de bares e casas noturnas na fase piloto, e expandindo conforme a demanda.</p></div>
+          <div class="z-faq__body"><p>Sim. O ZELO atende as nove regionais de Belo Horizonte, do Barreiro a Venda Nova.</p></div>
         </details>
       </div>
     </div>
@@ -428,13 +463,14 @@
       </div>
     </div>
     <div class="z-footer__legal">
-      <p>&copy; 2026 ZELO — Belo Horizonte, MG</p>
+      <p>&copy; 2026 ZELO — Belo Horizonte, MG · <span class="z-credit">Fotos ilustrativas: <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></span></p>
       <div><a href="#">Política de Privacidade</a><a href="#">Termos de Uso</a></div>
     </div>
   </div>
 </footer>
 
 <a class="z-float" id="floating-wa" data-float href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20quero%20cadastrar%20meu%20estabelecimento%20como%20parceiro." target="_blank" rel="noopener" aria-label="Falar com o ZELO no WhatsApp"><svg class="z-ico"><use href="#i-wa"/></svg></a>
+<div class="z-mbar"><a class="z-btn" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20quero%20cadastrar%20meu%20estabelecimento%20como%20parceiro." target="_blank" rel="noopener"><svg class="z-ico"><use href="#i-wa"/></svg>Falar no WhatsApp</a></div>
 
 <script src="assets/zelo.js" defer></script>
 <script>

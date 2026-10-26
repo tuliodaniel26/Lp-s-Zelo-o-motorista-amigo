@@ -134,4 +134,46 @@
     }), { threshold: 0.05 });
     players.forEach((el) => po.observe(el));
   }
+  /* ---------- História em fotos no topo (troca de cena automática) ---------- */
+  document.querySelectorAll('[data-story]').forEach((story) => {
+    const imgs = [...story.querySelectorAll('.z-story__img')];
+    const steps = [...story.querySelectorAll('.z-story__step')];
+    const dur = parseInt(story.dataset.story, 10) || 5000;
+    story.style.setProperty('--story-dur', dur + 'ms');
+    let i = 0, timer = null, visible = true;
+    const show = (n) => {
+      i = (n + imgs.length) % imgs.length;
+      imgs.forEach((im, k) => im.classList.toggle('is-active', k === i));
+      steps.forEach((s, k) => { s.classList.toggle('is-active', k === i); s.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+    };
+    const stop = () => { clearInterval(timer); timer = null; };
+    const play = () => { stop(); if (!reduce && visible && !document.hidden) timer = setInterval(() => show(i + 1), dur); };
+    steps.forEach((s, k) => s.addEventListener('click', () => { show(k); play(); }));
+    show(0); play();
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([e]) => { visible = e.isIntersecting; visible ? play() : stop(); }).observe(story);
+    }
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : play()));
+  });
+
+  /* ---------- Fluxo de segurança: as etapas acendem em sequência ---------- */
+  document.querySelectorAll('[data-flow]').forEach((flow) => {
+    const steps = [...flow.querySelectorAll('.z-flow__step')];
+    let k = -1, timer = null;
+    const paint = () => steps.forEach((s, n) => { s.classList.toggle('is-done', n < k); s.classList.toggle('is-current', n === k); });
+    if (reduce || !('IntersectionObserver' in window)) { k = steps.length; paint(); return; }
+    const tick = () => {
+      k = k >= steps.length ? -1 : k + 1;
+      paint();
+      timer = setTimeout(tick, k === steps.length ? 2800 : (k === -1 ? 700 : 1300));
+    };
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { if (!timer) tick(); }
+      else { clearTimeout(timer); timer = null; }
+    }, { threshold: 0.3 }).observe(flow);
+  });
+
+  /* ---------- Esconde a barra fixa enquanto o teclado está aberto ---------- */
+  document.addEventListener('focusin', (e) => { if (e.target.matches('input, select, textarea')) document.body.classList.add('has-input-focus'); });
+  document.addEventListener('focusout', (e) => { if (e.target.matches('input, select, textarea')) document.body.classList.remove('has-input-focus'); });
 })();
