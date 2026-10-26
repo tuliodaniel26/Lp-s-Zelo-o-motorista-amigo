@@ -35,5 +35,5 @@ Publicado no Render (Static Site, publish directory `.`): cada push na `main` at
 ## Pendências conhecidas
 
 - Logo em texto ("ZELO") na navbar/footer — trocar por SVG da marca quando aprovado.
-- Preencher `FORM_ENDPOINT` nas duas páginas com a URL /exec do Apps Script (ver `formularios/COMO-ATIVAR.md`).
+- Formulários ativos: planilha "ZELO — Cadastros do site" (conta pessoal do fundador) via Apps Script.
 - Imagens reais nos placeholders e domínio próprio.
