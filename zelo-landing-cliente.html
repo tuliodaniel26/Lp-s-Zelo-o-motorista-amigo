@@ -4,15 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0e0e11">
 <title>ZELO — Bebeu? Não deixe seu carro pra trás | Belo Horizonte</title>
 <meta name="description" content="Chame o ZELO no WhatsApp e vá para casa no seu próprio carro com segurança. Mais rápido que aplicativos terceiros, sem voltar amanhã buscar o carro. Belo Horizonte.">
 <meta name="keywords" content="motorista particular, não dirigir depois de beber, volta segura, lei seca, Belo Horizonte">
-
 <meta property="og:title" content="ZELO — Bebeu? Não deixe seu carro pra trás">
 <meta property="og:description" content="Chame o ZELO e vá para casa no seu próprio carro, com segurança e rapidez.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,408 +22,331 @@
   "priceRange": "$$"
 }
 </script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="zelo.min.css">
+<link rel="preload" href="assets/fonts/jost-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/zelo.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
-<body class="bg-white text-gray-900 antialiased">
+<body>
 
-<!-- NAVBAR -->
-<header id="navbar" class="fixed top-0 left-0 right-0 z-40">
-  <nav class="max-w-[1200px] mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
-    <a href="index.html" class="text-xl font-extrabold tracking-tight">ZELO</a>
-    <a href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener"
-       class="flex items-center gap-2 bg-success text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:brightness-110 transition">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24z"/></svg>
-      WhatsApp
-    </a>
-  </nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><polyline points="5 9 12 16 19 9"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 13 12 19 18 13"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="4.5 12.5 9.5 17.5 19.5 7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 19.5l1.3-3.9A7.6 7.6 0 1112 19.6a7.7 7.7 0 01-3.9-1L4 19.5z"/><path style="stroke:var(--acc,currentColor)" d="M8.8 10.4h6.4M8.8 13.4h4.2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.2-5.7 6.2-10.7a6.2 6.2 0 00-12.4 0C5.8 15.3 12 21 12 21z"/><circle style="stroke:var(--acc,currentColor)" cx="12" cy="10.3" r="2.3"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11.2L12 4l8.5 7.2"/><path d="M5.6 9.6V20h12.8V9.6"/><path style="stroke:var(--acc,currentColor)" d="M9.6 20v-5.6h4.8V20"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.2 3v5.6c0 4.5-3.1 8.2-7.2 9.6-4.1-1.4-7.2-5.1-7.2-9.6V6L12 3z"/><polyline style="stroke:var(--acc,currentColor)" points="8.7 12.2 11.1 14.6 15.4 9.8"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3.2" y="5" width="17.6" height="14" rx="2.2"/><circle style="stroke:var(--acc,currentColor)" cx="9" cy="10.8" r="2.2"/><path d="M5.7 16.2c.6-1.6 1.8-2.4 3.3-2.4s2.7.8 3.3 2.4"/><line x1="14.6" y1="10" x2="18" y2="10"/><line x1="14.6" y1="13.4" x2="17" y2="13.4"/></symbol>
+  <symbol id="i-voice" viewBox="0 0 24 24"><path d="M4.6 13.6V12a7.4 7.4 0 0114.8 0v1.6"/><rect x="3.4" y="13" width="4" height="6.2" rx="1.6"/><rect x="16.6" y="13" width="4" height="6.2" rx="1.6"/><path style="stroke:var(--acc,currentColor)" d="M18.6 19.2c0 1.4-1.7 2.3-4.2 2.3"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M3.5 15.6v-3.2l2-4.2A2 2 0 017.3 7h9.4a2 2 0 011.8 1.2l2 4.2v3.2"/><path d="M3.5 15.6h17"/><circle cx="7.4" cy="16.6" r="1.9"/><circle cx="16.6" cy="16.6" r="1.9"/><path style="stroke:var(--acc,currentColor)" d="M6.2 12.2h11.6"/></symbol>
+  <symbol id="i-money" viewBox="0 0 24 24"><rect x="3" y="6.5" width="18" height="11" rx="2"/><circle style="stroke:var(--acc,currentColor)" cx="12" cy="12" r="2.6"/><path d="M6.4 9.6v.01M17.6 14.4v.01"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><polyline style="stroke:var(--acc,currentColor)" points="12 7.3 12 12 15.2 14"/></symbol>
+  <symbol id="i-form" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.6V3h6v1.6"/><path style="stroke:var(--acc,currentColor)" d="M8.6 10h6.8M8.6 13.5h6.8M8.6 17h4"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.8" y="5.2" width="16.4" height="15" rx="2"/><path d="M3.8 9.6h16.4M8 3.4v3.4M16 3.4v3.4"/><circle style="stroke:var(--acc,currentColor)" cx="12" cy="14.8" r="2"/></symbol>
+  <symbol id="i-steering" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle style="stroke:var(--acc,currentColor)" cx="12" cy="12" r="2.2"/><path d="M3.6 10.6c2.7-.9 5.5-1.3 8.4-1.3s5.7.4 8.4 1.3M10.2 14.1l-3.3 6M13.8 14.1l3.3 6"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path style="stroke:var(--acc,currentColor)" d="M14 14h2.6v2.6H14zM18.2 18.2h1.8M20 14v1.6M14 20h1.6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="3" width="11" height="18" rx="2.4"/><path d="M10.5 18h3"/><path style="stroke:var(--acc,currentColor)" d="M9.4 9.6l2 2 3.2-3.6"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 016.5 5H18v2.5"/><rect x="4" y="7.5" width="16.5" height="12" rx="2"/><circle style="stroke:var(--acc,currentColor)" cx="16" cy="13.5" r="1.4"/></symbol>
+  <symbol id="i-parking" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path style="stroke:var(--acc,currentColor)" d="M10 16.5v-9h3a2.6 2.6 0 010 5.2h-3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3L12 4z"/><path style="stroke:var(--acc,currentColor)" d="M12 10v4.2M12 16.8v.01"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13l1.5 5"/><path d="M4 9.5c0 1.5 1.2 2.5 2.7 2.5S9.3 11 9.3 9.5c0 1.5 1.2 2.5 2.7 2.5s2.7-1 2.7-2.5c0 1.5 1.2 2.5 2.6 2.5S20 11 20 9.5"/><path d="M5.5 12v8h13v-8"/><path style="stroke:var(--acc,currentColor)" d="M10 20v-4.5h4V20"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.4" r="3.6"/><path d="M5 20c.9-3.6 3.7-5.6 7-5.6s6.1 2 7 5.6"/></symbol>
+</svg>
+
+<a class="z-skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="z-header" data-header>
+  <div class="z-wrap z-header__inner">
+    <a class="z-wordmark" href="index.html" aria-label="ZELO, página inicial">ZELO</a>
+    <nav class="z-header__nav" aria-label="Principal">
+      <a href="zelo-landing-cliente.html" aria-current="page">Preciso de uma volta</a>
+      <a href="zelo-landing-motorista.html">Sou motorista</a>
+      <a href="zelo-landing-page.html">Para estabelecimentos</a>
+    </nav>
+    <button class="z-menu-btn" type="button" data-menu-open aria-expanded="false" aria-controls="z-menu">
+      <span></span><span></span><span class="sr-only">Abrir menu</span>
+    </button>
+  </div>
 </header>
 
-<main>
+<div class="z-menu" id="z-menu" hidden role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="z-menu__close" type="button" data-menu-close aria-label="Fechar menu"><svg class="z-ico"><use href="#i-close"/></svg></button>
+  <a class="z-menu__band" style="--i:0;--band:#3d3d43" href="zelo-landing-cliente.html">Preciso de uma volta <small>Vá para casa no seu carro</small></a>
+  <a class="z-menu__band" style="--i:1;--band:#333338" href="zelo-landing-motorista.html">Sou motorista <small>Vagas na fase piloto</small></a>
+  <a class="z-menu__band" style="--i:2;--band:#29292e" href="zelo-landing-page.html">Para estabelecimentos <small>Parceria e Pacote Parceiro</small></a>
+  <a class="z-menu__band" style="--i:3;--band:#6D1523;--band-hover:#4E0F19" href="zelo-landing-cliente.html#calculadora">Simular o preço <small>Estimativa em segundos</small></a>
+  <a class="z-menu__band z-menu__band--cta" style="--i:4" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener">Falar no WhatsApp <small>(31) 97361-9814</small></a>
+</div>
 
-  <!-- HERO -->
-  <section class="pt-40 pb-16 lg:pt-48 lg:pb-24 px-6 lg:px-8">
-    <div class="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <span class="inline-block text-xs font-semibold uppercase tracking-wide text-gray-500 border border-gray-200 rounded-full px-4 py-1.5 mb-6">
-          Belo Horizonte · Disponível agora
-        </span>
-        <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
-          Bebeu? Não deixe seu carro pra trás.
+<main id="conteudo">
+
+  <section class="z-hero" data-hero>
+    <div class="z-road" aria-hidden="true">
+      <div class="z-road__plane">
+        <div class="z-road__lamps z-road__lamps--top"></div>
+        <div class="z-road__dash" style="top:27.5%"></div>
+        <div class="z-road__dash" style="top:72.5%"></div>
+        <div class="z-lane z-lane--back" style="top:16%"><i class="z-veh" style="--d:23s;--o:-3s"></i><i class="z-veh z-veh--light" style="--d:23s;--o:-11s"></i><i class="z-veh" style="--d:23s;--o:-18s"></i></div>
+        <div class="z-lane z-lane--back" style="top:39%"><i class="z-veh z-veh--light" style="--d:18s;--o:-6s"></i><i class="z-veh" style="--d:18s;--o:-14s"></i></div>
+        <div class="z-lane" style="top:61%"><i class="z-veh" style="--d:16s;--o:-1s"></i><i class="z-veh z-veh--light" style="--d:16s;--o:-7s"></i><i class="z-veh" style="--d:16s;--o:-12.5s"></i></div>
+        <div class="z-lane" style="top:84%"><i class="z-veh" style="--d:21s;--o:-4s"></i><i class="z-veh" style="--d:21s;--o:-15s"></i></div>
+        <div class="z-road__lamps z-road__lamps--bottom"></div>
+      </div>
+    </div>
+    <div class="z-hero__veil"></div>
+    <div class="z-hero__stage">
+      <div class="z-hero__circle">
+        <h1 class="z-hero__title">
+          <span class="l"><span style="--i:0">Bebeu? Não deixe</span></span>
+          <span class="l"><span style="--i:1">seu carro pra trás.</span></span>
         </h1>
-        <p class="text-lg lg:text-xl text-gray-500 leading-relaxed mb-8 max-w-lg">
-          Enquanto você espera aplicativos terceiros, o ZELO já está a caminho — e leva você <strong class="text-gray-900">e o seu carro</strong> para casa. Sem voltar amanhã pra buscar nada.
-        </p>
-        <a href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 bg-success text-white px-10 py-5 rounded-full font-semibold text-lg hover:brightness-110 transition">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24z"/></svg>
-          Chamar no WhatsApp agora
+        <p class="z-hero__text">Enquanto você espera aplicativos terceiros, o ZELO já está a caminho, e leva você e o seu carro para casa. Sem voltar amanhã pra buscar nada.</p>
+        <div class="z-hero__links"><a class="z-more" href="#calculadora">Simular o preço</a></div>
+        <a class="z-hero__action" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener">
+          <span class="z-dot"><svg class="z-ico"><use href="#i-wa"/></svg></span>
+          <span>Chamar no WhatsApp</span>
         </a>
       </div>
-
-      <div class="aspect-[4/3] rounded-2xl bg-gray-50 border border-gray-200 overflow-hidden">
-        <svg viewBox="0 0 400 300" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="300" fill="#FAFAFA"/>
-          <!-- city lights bokeh -->
-          <circle cx="40" cy="50" r="10" fill="#E5E5E5"/>
-          <circle cx="90" cy="35" r="6" fill="#E5E5E5"/>
-          <circle cx="340" cy="45" r="12" fill="#E5E5E5"/>
-          <circle cx="300" cy="70" r="5" fill="#6D1523" opacity="0.5"/>
-          <circle cx="370" cy="90" r="7" fill="#E5E5E5"/>
-          <!-- ground -->
-          <rect x="0" y="220" width="400" height="80" fill="#F0F0F0"/>
-          <!-- car body -->
-          <path d="M60 220 L90 175 Q100 165 115 165 L255 165 Q270 165 280 175 L310 220 Z" fill="#0A0A0A"/>
-          <rect x="60" y="215" width="250" height="15" rx="4" fill="#0A0A0A"/>
-          <!-- windows -->
-          <path d="M108 178 L118 200 L188 200 L188 178 Z" fill="#FAFAFA" opacity="0.9"/>
-          <path d="M196 178 L196 200 L262 200 L253 178 Z" fill="#FAFAFA" opacity="0.9"/>
-          <!-- driver silhouette (front) -->
-          <circle cx="230" cy="188" r="9" fill="#737373"/>
-          <path d="M218 200 Q230 190 244 200 L244 200 L218 200 Z" fill="#737373"/>
-          <!-- passenger silhouette (back seat) -->
-          <circle cx="140" cy="188" r="9" fill="#6D1523"/>
-          <path d="M128 200 Q140 190 154 200 L154 200 L128 200 Z" fill="#6D1523"/>
-          <!-- wheels -->
-          <circle cx="110" cy="228" r="14" fill="#0A0A0A"/>
-          <circle cx="110" cy="228" r="5" fill="#FAFAFA"/>
-          <circle cx="265" cy="228" r="14" fill="#0A0A0A"/>
-          <circle cx="265" cy="228" r="5" fill="#FAFAFA"/>
-          <!-- taillight -->
-          <rect x="296" y="195" width="8" height="14" rx="2" fill="#6D1523"/>
-        </svg>
-      </div>
     </div>
+    <p class="z-hero__foot">Atendimento noturno em Belo Horizonte</p>
+    <a class="z-hero__cue" href="#comparar" aria-label="Ir para o conteúdo"><svg class="z-ico"><use href="#i-down"/></svg></a>
   </section>
 
-  <!-- COMPARATIVO -->
-  <section class="py-16 lg:py-24 px-6 lg:px-8 bg-gray-50">
-    <div class="max-w-[1000px] mx-auto">
-      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-center mb-12 reveal">
-        Compare e decida em 10 segundos
-      </h2>
-
-      <div class="grid grid-cols-3 gap-2 sm:gap-4 reveal">
-        <!-- Header row -->
-        <div class="text-center pb-2">
-          <span class="text-lg">🚕</span>
-          <p class="text-xs sm:text-sm font-semibold text-gray-500 mt-1">Apps terceiros / Táxi</p>
+  <section class="z-section" id="comparar">
+    <div class="z-wrap">
+      <div class="z-head"><h2 class="z-title">Compare e decida em 10 segundos</h2></div>
+      <div class="z-compare">
+        <div class="z-compare__col" data-reveal>
+          <h3>Apps terceiros ou táxi</h3>
+          <ul>
+            <li><svg class="z-ico"><use href="#i-x"/></svg><span>Tempo de espera imprevisível em fim de semana</span></li>
+            <li><svg class="z-ico"><use href="#i-x"/></svg><span>Carro fica na rua, sozinho</span></li>
+            <li><svg class="z-ico"><use href="#i-x"/></svg><span>Precisa voltar buscar o carro amanhã</span></li>
+          </ul>
         </div>
-        <div class="text-center pb-2">
-          <span class="text-lg">🚗</span>
-          <p class="text-xs sm:text-sm font-semibold text-gray-500 mt-1">Deixar o carro</p>
+        <div class="z-compare__col" data-reveal>
+          <h3>Deixar o carro</h3>
+          <ul>
+            <li><svg class="z-ico"><use href="#i-x"/></svg><span>Some do seu controle até o dia seguinte</span></li>
+            <li><svg class="z-ico"><use href="#i-x"/></svg><span>Precisa voltar buscar o carro amanhã</span></li>
+          </ul>
         </div>
-        <div class="text-center pb-2">
-          <span class="text-lg">⚡</span>
-          <p class="text-xs sm:text-sm font-semibold mt-1">ZELO</p>
-        </div>
-
-        <!-- Column bodies -->
-        <div class="bg-white rounded-2xl p-4 sm:p-6 text-center text-xs sm:text-sm text-gray-500 space-y-4">
-          <p>Tempo de espera imprevisível em fim de semana</p>
-          <p>Carro fica na rua, sozinho</p>
-          <p>Precisa voltar buscar o carro amanhã</p>
-        </div>
-        <div class="bg-white rounded-2xl p-4 sm:p-6 text-center text-xs sm:text-sm text-gray-500 space-y-4">
-          <p>—</p>
-          <p>Some do seu controle até o dia seguinte</p>
-          <p>Precisa voltar buscar o carro amanhã</p>
-        </div>
-        <div class="bg-accent text-white rounded-2xl p-4 sm:p-6 text-center text-xs sm:text-sm space-y-4 lg:scale-105 lg:-translate-y-1">
-          <p>Pensado para os horários de pico da noite</p>
-          <p>Vai com você, para casa</p>
-          <p>Já está tudo resolvido</p>
+        <div class="z-compare__col z-compare__col--wine" data-reveal>
+          <h3><span class="z-wordmark">ZELO</span></h3>
+          <ul>
+            <li><svg class="z-ico"><use href="#i-check"/></svg><span>Pensado para os horários de pico da noite</span></li>
+            <li><svg class="z-ico"><use href="#i-check"/></svg><span>Vai com você, para casa</span></li>
+            <li><svg class="z-ico"><use href="#i-check"/></svg><span>Já está tudo resolvido</span></li>
+          </ul>
         </div>
       </div>
     </div>
+    <span class="z-watermark" aria-hidden="true">Compare</span>
   </section>
 
-  <!-- ESTATÍSTICAS -->
-  <section class="py-16 lg:py-20 px-6 lg:px-8 bg-accent text-white">
-    <div class="max-w-[1000px] mx-auto text-center">
-      <h2 class="text-2xl lg:text-3xl font-bold tracking-tight mb-3 reveal">O risco é real, e os números não deixam dúvida</h2>
-      <p class="text-white/70 mb-12 reveal">Não é exagero. É estatística.</p>
-
-      <div class="grid sm:grid-cols-3 gap-6 lg:gap-8">
-        <div class="reveal">
-          <p class="text-4xl lg:text-5xl font-extrabold">+10 mil</p>
-          <p class="text-white/70 mt-2 text-sm">mortes por ano no Brasil em acidentes de trânsito envolvendo álcool e direção</p>
+  <section class="z-section z-night" id="riscos">
+    <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(80vw,640px)" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+    <div class="z-wrap">
+      <div class="z-head z-head--stack">
+        <h2 class="z-title">O risco é real, e os números não deixam dúvida</h2>
+        <p class="z-lead">Não é exagero. É estatística.</p>
+      </div>
+      <div class="z-stats">
+        <div class="z-stat" data-reveal>
+          <p class="z-stat__n" data-count="10" data-prefix="+" data-suffix=" mil">+10 mil</p>
+          <p>mortes por ano no Brasil em acidentes de trânsito envolvendo álcool e direção</p>
         </div>
-        <div class="reveal">
-          <p class="text-4xl lg:text-5xl font-extrabold">+14,6%</p>
-          <p class="text-white/70 mt-2 text-sm">de aumento nas mortes por álcool ao volante em 2025 nas rodovias federais</p>
+        <div class="z-stat" data-reveal style="--delay:.12s">
+          <p class="z-stat__n" data-count="14.6" data-decimals="1" data-prefix="+" data-suffix="%">+14,6%</p>
+          <p>de aumento nas mortes por álcool ao volante em 2025 nas rodovias federais</p>
         </div>
-        <div class="reveal">
-          <p class="text-4xl lg:text-5xl font-extrabold">Fim de semana</p>
-          <p class="text-white/70 mt-2 text-sm">é quando a maior parte desses acidentes acontece — justamente quando você mais precisa do ZELO</p>
+        <div class="z-stat" data-reveal style="--delay:.24s">
+          <p class="z-stat__n z-stat__n--word">Fim de semana</p>
+          <p>é quando a maior parte desses acidentes acontece, justamente quando você mais precisa do ZELO</p>
         </div>
       </div>
-
-      <p class="text-xs text-white/50 mt-10">Fontes: CISA (Centro de Informações sobre Saúde e Álcool) com base em dados do Ministério da Saúde · Polícia Rodoviária Federal, 2025.</p>
+      <p class="z-source">Fontes: CISA (Centro de Informações sobre Saúde e Álcool), com base em dados do Ministério da Saúde; Polícia Rodoviária Federal, 2025.</p>
     </div>
+    <span class="z-watermark" aria-hidden="true">Estatística</span>
   </section>
 
-  <!-- CALCULADORA CLIENTE -->
-  <section id="calculadora" class="py-16 lg:py-24 px-6 lg:px-8 bg-gray-50">
-    <div class="max-w-[700px] mx-auto">
-      <div class="text-center mb-10 reveal">
-        <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">Simule o valor da sua volta</h2>
-        <p class="text-gray-500 mt-4 text-lg">Faça uma estimativa rápida da distância até sua casa e veja quanto custa chegar em segurança — com o seu próprio carro. É só uma simulação; o valor exato é combinado no WhatsApp.</p>
-      </div>
-
-      <div class="bg-white rounded-2xl p-8 border border-gray-200 reveal">
-        <div class="grid sm:grid-cols-2 gap-6 mb-4">
-          <div>
-            <label for="calc-cli-km" class="block text-sm font-medium mb-1.5">Distância estimada (km)</label>
-            <input type="number" id="calc-cli-km" min="0" step="1" value="8"
-                   class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:border-gray-900 outline-none transition-colors">
-          </div>
-          <div>
-            <label for="calc-cli-min" class="block text-sm font-medium mb-1.5">Tempo estimado (min)</label>
-            <input type="number" id="calc-cli-min" min="0" step="1" value="15"
-                   class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:border-gray-900 outline-none transition-colors">
-          </div>
+  <section class="z-section z-section--white" id="calculadora">
+    <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(80vw,640px);--rx:74%" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+    <div class="z-wrap">
+      <div class="z-calc">
+        <div class="z-calc__intro" data-reveal>
+          <h2 class="z-title">Simule o valor da sua volta</h2>
+          <p class="z-lead">Faça uma estimativa rápida da distância até sua casa e veja quanto custa chegar em segurança, com o seu próprio carro. É só uma simulação; o valor exato é combinado no WhatsApp.</p>
         </div>
-
-        <button id="btn-calc-cli"
-                class="w-full mb-6 bg-accent text-white py-3 rounded-xl font-semibold hover:bg-accent-dark transition-colors duration-300">
-          Calcular
-        </button>
-
-        <div class="bg-black text-white rounded-2xl p-6 text-center">
-          <p class="text-sm text-gray-400 uppercase tracking-wide">Sua volta com o ZELO · valor simulado</p>
-          <p class="text-4xl font-extrabold mt-2"><span id="calc-cli-preco">R$ 49,62</span>*</p>
-          <p class="text-xs text-gray-400 mt-2">Corrida <span id="calc-cli-corrida">R$ 30,48</span> + retorno do motorista <span id="calc-cli-retorno">R$ 19,14</span></p>
-          <p class="text-sm text-gray-400 mt-3" id="calc-cli-comparativo">Ir de app hoje e voltar amanhã para buscar o carro sai por cerca de R$ 31,90. Com o ZELO, por R$ 17,72 a mais, seu carro já amanhece na sua garagem.</p>
-        </div>
-
-        <p class="text-xs text-gray-400 mt-4 text-center">*Este valor é apenas uma <strong class="text-gray-500">simulação estimada</strong> para corrida noturna e não representa o preço definitivo. A taxa de retorno cobre a volta do motorista e vai integralmente para ele. O valor final é sempre confirmado com você no atendimento pelo WhatsApp, antes da corrida.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMO FUNCIONA -->
-  <section id="como-funciona" class="py-16 lg:py-24 px-6 lg:px-8 bg-accent text-white overflow-hidden">
-    <div class="max-w-[1000px] mx-auto">
-      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-        <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">Como o ZELO funciona na prática</h2>
-      </div>
-
-      <!-- Linha conectora SVG animada (desktop) -->
-      <div class="hidden lg:block absolute left-0 right-0 pointer-events-none" style="height:2px;top:0" aria-hidden="true"></div>
-
-      <div class="relative">
-        <!-- SVG da linha conectora — desktop only -->
-        <svg id="connector-cli" class="hidden lg:block absolute top-16 left-0 w-full" height="4" viewBox="0 0 900 4" preserveAspectRatio="none" aria-hidden="true">
-          <line x1="150" y1="2" x2="750" y2="2" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-dasharray="6 6"/>
-          <line id="connector-cli-animated" x1="150" y1="2" x2="750" y2="2" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-dasharray="600" stroke-dashoffset="600" style="transition:stroke-dashoffset 1.2s ease"/>
-        </svg>
-
-        <div class="grid lg:grid-cols-3 gap-12 lg:gap-6">
-
-          <!-- Passo 1 -->
-          <div class="step-cli reveal flex flex-col items-center text-center lg:items-start lg:text-left">
-            <div class="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-5 step-icon" style="transition: transform 0.4s ease, box-shadow 0.4s ease">
-              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
-                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-              </svg>
+        <div class="z-calc__panel">
+          <div class="z-calc__inputs">
+            <div class="z-field">
+              <label class="z-label" for="calc-cli-km">Distância estimada (km)</label>
+              <input class="z-input" type="number" id="calc-cli-km" min="0" step="1" value="8" inputmode="numeric">
             </div>
-            <span class="text-5xl font-extrabold text-white/15 leading-none mb-3">01</span>
-            <h3 class="font-bold text-xl mb-2">Chame pelo WhatsApp</h3>
-            <p class="text-white/70 text-sm leading-relaxed">Sem aplicativo, sem cadastro. Uma mensagem e pronto — você já está sendo atendido.</p>
-          </div>
-
-          <!-- Passo 2 -->
-          <div class="step-cli reveal flex flex-col items-center text-center lg:items-start lg:text-left">
-            <div class="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-5 step-icon" style="transition: transform 0.4s ease, box-shadow 0.4s ease">
-              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
+            <div class="z-field">
+              <label class="z-label" for="calc-cli-min">Tempo estimado (min)</label>
+              <input class="z-input" type="number" id="calc-cli-min" min="0" step="1" value="15" inputmode="numeric">
             </div>
-            <span class="text-5xl font-extrabold text-white/15 leading-none mb-3">02</span>
-            <h3 class="font-bold text-xl mb-2">Motorista a caminho</h3>
-            <p class="text-white/70 text-sm leading-relaxed">Equipe dimensionada para os horários de maior movimento da noite, sem a imprevisibilidade de apps genéricos.</p>
           </div>
-
-          <!-- Passo 3 -->
-          <div class="step-cli reveal flex flex-col items-center text-center lg:items-start lg:text-left">
-            <div class="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-5 step-icon" style="transition: transform 0.4s ease, box-shadow 0.4s ease">
-              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
-                <path d="M5 17h14M5 17a2 2 0 100 4 2 2 0 000-4zm14 0a2 2 0 100 4 2 2 0 000-4zM5 17V7a2 2 0 012-2h6l4 4h2a2 2 0 012 2v6"/>
-                <circle cx="12" cy="6" r="2" fill="white"/>
-              </svg>
+          <button id="btn-calc-cli" class="z-btn z-btn--block" type="button">Calcular</button>
+          <div class="z-calc__result" aria-live="polite">
+            <p class="z-calc__label">Sua volta com o ZELO, valor simulado</p>
+            <p class="z-calc__value"><span id="calc-cli-preco">R$ 49,62</span><sup>*</sup></p>
+            <div class="z-calc__rows">
+              <div class="z-calc__row"><span>Corrida</span><strong id="calc-cli-corrida">R$ 30,48</strong></div>
+              <div class="z-calc__row"><span>Retorno do motorista</span><strong id="calc-cli-retorno">R$ 19,14</strong></div>
             </div>
-            <span class="text-5xl font-extrabold text-white/15 leading-none mb-3">03</span>
-            <h3 class="font-bold text-xl mb-2">Você vai para casa no seu carro</h3>
-            <p class="text-white/70 text-sm leading-relaxed">O motorista ZELO dirige o seu próprio veículo até sua casa. Você chega com conforto — e seu carro chega com você.</p>
+            <p class="z-calc__note" id="calc-cli-comparativo">Ir de app hoje e voltar amanhã para buscar o carro sai por cerca de R$ 31,90. Com o ZELO, por R$ 17,72 a mais, seu carro já amanhece na sua garagem.</p>
+            <p class="z-calc__fine">*Este valor é apenas uma <strong>simulação estimada</strong> para corrida noturna e não representa o preço definitivo. A taxa de retorno cobre a volta do motorista e vai integralmente para ele. O valor final é sempre confirmado com você no atendimento pelo WhatsApp, antes da corrida.</p>
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONFIANÇA -->
-  <section class="py-16 lg:py-24 px-6 lg:px-8 bg-gray-50">
-    <div class="max-w-[1200px] mx-auto">
-      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-center mb-12 reveal">Sua segurança em primeiro lugar</h2>
-
-      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-        <div class="reveal bg-white rounded-2xl p-8 text-center">
-          <svg class="mx-auto" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D1523" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
-          <h3 class="font-semibold text-lg mt-4">Motorista verificado</h3>
-          <p class="text-gray-500 mt-2">Todo motorista ZELO passa por verificação antes de atender. Você sabe exatamente quem está dirigindo o seu carro.</p>
+  <section class="z-section" id="como-funciona">
+    <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(70vw,560px)" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+    <div class="z-wrap">
+      <div class="z-head"><h2 class="z-title">Como o ZELO funciona na prática</h2></div>
+      <div class="z-steps" data-carousel>
+        <div class="z-steps__aside">
+          <span class="z-index" data-index aria-hidden="true">01</span>
+          <div class="z-arrows">
+            <button class="z-arrow" type="button" data-prev aria-label="Passo anterior"><svg class="z-ico"><use href="#i-left"/></svg></button>
+            <button class="z-arrow" type="button" data-next aria-label="Próximo passo"><svg class="z-ico"><use href="#i-right"/></svg></button>
+          </div>
         </div>
-        <div class="reveal bg-white rounded-2xl p-8 text-center">
-          <svg class="mx-auto" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D1523" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>
-          <h3 class="font-semibold text-lg mt-4">Identificação antes da chegada</h3>
-          <p class="text-gray-500 mt-2">Você recebe o nome e a identificação do motorista antes dele chegar até você.</p>
-        </div>
-        <div class="reveal bg-white rounded-2xl p-8 text-center">
-          <svg class="mx-auto" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D1523" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-          <h3 class="font-semibold text-lg mt-4">Atendimento humano</h3>
-          <p class="text-gray-500 mt-2">Fase piloto com atendimento direto — se precisar, fala com gente de verdade, não com um chatbot.</p>
-        </div>
+        <ol class="z-track" data-track>
+          <li class="z-step">
+            <div class="z-tile" style="--acc:#D3263A"><span class="z-step__n" aria-hidden="true">01</span><svg class="z-ico"><use href="#i-chat"/></svg></div>
+            <h3>Chame pelo WhatsApp</h3>
+            <p>Sem aplicativo, sem cadastro. Uma mensagem e pronto, você já está sendo atendido.</p>
+          </li>
+          <li class="z-step">
+            <div class="z-tile" style="--acc:#D3263A"><span class="z-step__n" aria-hidden="true">02</span><svg class="z-ico"><use href="#i-pin"/></svg></div>
+            <h3>Motorista a caminho</h3>
+            <p>Equipe dimensionada para os horários de maior movimento da noite, sem a imprevisibilidade de apps genéricos.</p>
+          </li>
+          <li class="z-step">
+            <div class="z-tile z-tile--red" style="--acc:#fff"><span class="z-step__n" aria-hidden="true">03</span><svg class="z-ico"><use href="#i-home"/></svg></div>
+            <h3>Você vai para casa no seu carro</h3>
+            <p>O motorista ZELO dirige o seu próprio veículo até sua casa. Você chega com conforto, e seu carro chega com você.</p>
+          </li>
+        </ol>
       </div>
     </div>
+    <span class="z-watermark" aria-hidden="true">Simples assim</span>
   </section>
 
-  <!-- FAQ -->
-  <section class="py-16 lg:py-24 px-6 lg:px-8">
-    <div class="max-w-[800px] mx-auto">
-      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-center mb-12 reveal">Perguntas frequentes</h2>
-
-      <div class="space-y-3">
-        <div class="faq-item reveal border border-gray-200 rounded-2xl px-6 py-2">
-          <button class="faq-trigger w-full flex items-center justify-between py-4 text-left font-semibold" aria-expanded="false">
-            <span>Quanto custa uma corrida ZELO?</span>
-            <span class="faq-icon text-2xl text-gray-400">+</span>
-          </button>
-          <div class="faq-content"><p class="text-gray-500 pb-4">O valor depende da distância até sua casa e tem duas partes: a corrida e a taxa de retorno do motorista. Use o simulador acima para ter uma estimativa; o valor final é confirmado no WhatsApp antes de a corrida começar.</p></div>
-        </div>
-
-        <div class="faq-item reveal border border-gray-200 rounded-2xl px-6 py-2">
-          <button class="faq-trigger w-full flex items-center justify-between py-4 text-left font-semibold" aria-expanded="false">
-            <span>Vocês atendem em qualquer horário da noite?</span>
-            <span class="faq-icon text-2xl text-gray-400">+</span>
-          </button>
-          <div class="faq-content"><p class="text-gray-500 pb-4">Estamos priorizando os horários de maior movimento (fins de semana à noite) na fase piloto, e expandindo a cobertura conforme a demanda.</p></div>
-        </div>
-
-        <div class="faq-item reveal border border-gray-200 rounded-2xl px-6 py-2">
-          <button class="faq-trigger w-full flex items-center justify-between py-4 text-left font-semibold" aria-expanded="false">
-            <span>E se o meu carro for grande/câmbio manual?</span>
-            <span class="faq-icon text-2xl text-gray-400">+</span>
-          </button>
-          <div class="faq-content"><p class="text-gray-500 pb-4">Sem problema — nossos motoristas são preparados para dirigir diferentes tipos de veículo. Se tiver alguma particularidade, é só avisar na hora de chamar.</p></div>
-        </div>
-
-        <div class="faq-item reveal border border-gray-200 rounded-2xl px-6 py-2">
-          <button class="faq-trigger w-full flex items-center justify-between py-4 text-left font-semibold" aria-expanded="false">
-            <span>O motorista fica sem transporte depois de me levar?</span>
-            <span class="faq-icon text-2xl text-gray-400">+</span>
-          </button>
-          <div class="faq-content"><p class="text-gray-500 pb-4">Não. O valor da sua volta inclui uma taxa de retorno que vai inteira para o motorista e cobre a volta dele. Ele organiza o retorno por conta própria, sem nenhum impacto no seu atendimento.</p></div>
-        </div>
-
-        <div class="faq-item reveal border border-gray-200 rounded-2xl px-6 py-2">
-          <button class="faq-trigger w-full flex items-center justify-between py-4 text-left font-semibold" aria-expanded="false">
-            <span>Funciona em toda Belo Horizonte?</span>
-            <span class="faq-icon text-2xl text-gray-400">+</span>
-          </button>
-          <div class="faq-content"><p class="text-gray-500 pb-4">Estamos priorizando as regiões com maior concentração de bares e vida noturna na fase piloto.</p></div>
-        </div>
+  <section class="z-section z-section--white" id="seguranca">
+    <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(70vw,560px)" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+    <div class="z-wrap">
+      <div class="z-head"><h2 class="z-title">Sua segurança em primeiro lugar</h2></div>
+      <div class="z-cards">
+        <article class="z-card" data-reveal>
+          <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-shield"/></svg></div>
+          <h3>Motorista verificado</h3>
+          <p>Todo motorista ZELO passa por verificação antes de atender. Você sabe exatamente quem está dirigindo o seu carro.</p>
+        </article>
+        <article class="z-card" data-reveal style="--delay:0.12s">
+          <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-id"/></svg></div>
+          <h3>Identificação antes da chegada</h3>
+          <p>Você recebe o nome e a identificação do motorista antes dele chegar até você.</p>
+        </article>
+        <article class="z-card" data-reveal style="--delay:0.24s">
+          <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-voice"/></svg></div>
+          <h3>Atendimento humano</h3>
+          <p>Fase piloto com atendimento direto. Se precisar, você fala com gente de verdade, não com um chatbot.</p>
+        </article>
       </div>
     </div>
+    <span class="z-watermark" aria-hidden="true">Segurança</span>
   </section>
 
-  <!-- CTA FINAL -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8 bg-black text-white text-center">
-    <div class="max-w-[700px] mx-auto reveal">
-      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-8">
-        Chegou a hora de ir para casa? Seu carro vai com você.
-      </h2>
-      <a href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener"
-         class="inline-flex items-center gap-2 bg-success text-white px-10 py-5 rounded-full font-semibold text-lg hover:brightness-110 transition">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24z"/></svg>
-        Chamar no WhatsApp
-      </a>
+  <section class="z-section" id="faq">
+    <div class="z-wrap">
+      <div class="z-head"><h2 class="z-title">Perguntas frequentes</h2></div>
+      <div class="z-faq">
+        <details>
+          <summary>Quanto custa uma corrida ZELO?<span class="z-faq__icon" aria-hidden="true"></span></summary>
+          <div class="z-faq__body"><p>O valor depende da distância até sua casa e tem duas partes: a corrida e a taxa de retorno do motorista. Use o simulador acima para ter uma estimativa; o valor final é confirmado no WhatsApp antes de a corrida começar.</p></div>
+        </details>
+        <details>
+          <summary>Vocês atendem em qualquer horário da noite?<span class="z-faq__icon" aria-hidden="true"></span></summary>
+          <div class="z-faq__body"><p>Estamos priorizando os horários de maior movimento (fins de semana à noite) na fase piloto, e expandindo a cobertura conforme a demanda.</p></div>
+        </details>
+        <details>
+          <summary>E se o meu carro for grande/câmbio manual?<span class="z-faq__icon" aria-hidden="true"></span></summary>
+          <div class="z-faq__body"><p>Sem problema — nossos motoristas são preparados para dirigir diferentes tipos de veículo. Se tiver alguma particularidade, é só avisar na hora de chamar.</p></div>
+        </details>
+        <details>
+          <summary>O motorista fica sem transporte depois de me levar?<span class="z-faq__icon" aria-hidden="true"></span></summary>
+          <div class="z-faq__body"><p>Não. O valor da sua volta inclui uma taxa de retorno que vai inteira para o motorista e cobre a volta dele. Ele organiza o retorno por conta própria, sem nenhum impacto no seu atendimento.</p></div>
+        </details>
+        <details>
+          <summary>Funciona em toda Belo Horizonte?<span class="z-faq__icon" aria-hidden="true"></span></summary>
+          <div class="z-faq__body"><p>Estamos priorizando as regiões com maior concentração de bares e vida noturna na fase piloto.</p></div>
+        </details>
+      </div>
+    </div>
+    <span class="z-watermark" aria-hidden="true">Dúvidas</span>
+  </section>
+
+  <section class="z-section z-wine z-cta">
+    <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(90vw,720px)" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+    <div class="z-wrap">
+      <h2 class="z-title"><span class="z-line">Chegou a hora de ir para casa?</span> <span class="z-line">Seu carro vai com você.</span></h2>
+      <div class="z-cta__actions">
+        <a class="z-btn z-btn--white" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener"><svg class="z-ico"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+        <a class="z-btn z-btn--light" href="#calculadora">Simular o preço</a>
+      </div>
     </div>
   </section>
 
 </main>
 
-<!-- FOOTER -->
-<footer class="py-16 px-6 lg:px-8 border-t border-gray-200">
-  <div class="max-w-[1200px] mx-auto grid sm:grid-cols-3 gap-8 text-sm">
-    <div><span class="text-xl font-extrabold tracking-tight">ZELO</span></div>
-    <div>
-      <p class="font-semibold mb-2">Institucional</p>
-      <a href="index.html" class="block text-gray-500 hover:text-black transition-colors">Início</a>
-      <a href="zelo-landing-motorista.html" class="block text-gray-500 hover:text-black transition-colors">Sou motorista</a>
-      <a href="zelo-landing-page.html" class="block text-gray-500 hover:text-black transition-colors">Sou um estabelecimento</a>
+<footer class="z-footer">
+  <div class="z-wrap">
+    <div class="z-footer__top">
+      <div class="z-footer__brand">
+        <a class="z-wordmark" href="index.html">ZELO</a>
+        <p>Segurança e tranquilidade no fim da noite, em Belo Horizonte.</p>
+      </div>
+      <div class="z-footer__col">
+        <h4>Para você</h4>
+        <a href="zelo-landing-cliente.html">Preciso de uma volta</a>
+        <a href="zelo-landing-cliente.html#calculadora">Simular o preço</a>
+      </div>
+      <div class="z-footer__col">
+        <h4>Trabalhe com o ZELO</h4>
+        <a href="zelo-landing-motorista.html">Sou motorista</a>
+        <a href="zelo-landing-page.html">Para estabelecimentos</a>
+      </div>
+      <div class="z-footer__col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:zeloomotoristaamigo@gmail.com">E-mail</a>
+      </div>
     </div>
-    <div>
-      <p class="font-semibold mb-2">Contato</p>
-      <a href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" class="block text-gray-500 hover:text-black transition-colors">WhatsApp</a>
-      <a href="mailto:zeloomotoristaamigo@gmail.com" class="block text-gray-500 hover:text-black transition-colors">E-mail</a>
-    </div>
-  </div>
-  <div class="max-w-[1200px] mx-auto mt-10 pt-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between gap-4 text-xs text-gray-400">
-    <p>&copy; 2026 ZELO — Belo Horizonte, MG</p>
-    <div class="flex gap-4">
-      <a href="#" class="hover:text-gray-600">Política de Privacidade</a>
-      <a href="#" class="hover:text-gray-600">Termos de Uso</a>
+    <div class="z-footer__legal">
+      <p>&copy; 2026 ZELO — Belo Horizonte, MG</p>
+      <div><a href="#">Política de Privacidade</a><a href="#">Termos de Uso</a></div>
     </div>
   </div>
 </footer>
 
-<!-- FLOATING WHATSAPP BUTTON -->
-<a id="floating-wa" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
-   class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-success shadow-lg flex items-center justify-center hover:brightness-110 transition-opacity duration-200">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24z"/></svg>
-</a>
+<a class="z-float" id="floating-wa" data-float href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20preciso%20de%20um%20motorista%20para%20levar%20meu%20carro%20para%20casa.%20Estou%20em%3A%20" target="_blank" rel="noopener" aria-label="Falar com o ZELO no WhatsApp"><svg class="z-ico"><use href="#i-wa"/></svg></a>
 
+<script src="assets/zelo.js" defer></script>
 <script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 80);
-  });
-
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('is-visible'), i * 60);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => observer.observe(el));
-
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const trigger = item.querySelector('.faq-trigger');
-    trigger.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        trigger.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-
-  // ===== CALCULADORA DE PREÇO (cliente) =====
-  // Parâmetros de tarifa ZELO — edite aqui se os valores mudarem
-  // (devem ficar iguais aos da página do motorista e da planilha operacional)
-  const TARIFA = {
+const TARIFA = {
     bandeirada: 6,       // R$ partida
     precoKm: 2,          // R$ por km
     precoMin: 0.30,      // R$ por minuto
@@ -459,7 +381,7 @@
   }
 
   function formatarReal(valor) {
-    return 'R$\u00a0' + valor.toFixed(2).replace('.', ',');
+    return 'R$ ' + valor.toFixed(2).replace('.', ',');
   }
 
   const cliKm = document.getElementById('calc-cli-km');
@@ -493,43 +415,12 @@
   }
 
   // Botão Calcular + Enter + atualização automática ao digitar
-  const btnCli = document.getElementById('btn-calc-cli');
-  if (btnCli) {
-    btnCli.addEventListener('click', () => { atualizarCalcCliente(); cliKm.blur(); cliMin.blur(); });
-  }
+  document.getElementById('btn-calc-cli').addEventListener('click', () => { atualizarCalcCliente(); cliKm.blur(); cliMin.blur(); });
   [cliKm, cliMin].forEach(el => {
     el.addEventListener('input', atualizarCalcCliente);
     el.addEventListener('keydown', e => { if (e.key === 'Enter') { atualizarCalcCliente(); el.blur(); } });
   });
   atualizarCalcCliente();
-
-  // ===== LINHA CONECTORA ANIMADA (Como Funciona) =====
-  const connectorCli = document.getElementById('connector-cli-animated');
-  if (connectorCli) {
-    const sectionCli = document.getElementById('como-funciona');
-    const connectorObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setTimeout(() => { connectorCli.style.strokeDashoffset = '0'; }, 400);
-          connectorObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    if (sectionCli) connectorObserver.observe(sectionCli);
-
-    // Hover nos ícones dos passos
-    document.querySelectorAll('.step-icon').forEach(icon => {
-      icon.addEventListener('mouseenter', () => {
-        icon.style.transform = 'translateY(-4px)';
-        icon.style.boxShadow = '0 12px 32px rgba(0,0,0,0.25)';
-      });
-      icon.addEventListener('mouseleave', () => {
-        icon.style.transform = 'translateY(0)';
-        icon.style.boxShadow = 'none';
-      });
-    });
-  }
 </script>
-
 </body>
 </html>

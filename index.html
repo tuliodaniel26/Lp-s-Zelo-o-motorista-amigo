@@ -4,134 +4,349 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0e0e11">
 <title>ZELO — O Motorista Amigo | Belo Horizonte</title>
 <meta name="description" content="ZELO: o motorista amigo que leva você e o seu carro para casa com segurança. Conheça também nossas parcerias com estabelecimentos e vagas para motoristas em Belo Horizonte.">
 <meta name="keywords" content="ZELO, motorista amigo, transporte noturno seguro, Belo Horizonte">
-
 <meta property="og:title" content="ZELO — O Motorista Amigo">
 <meta property="og:description" content="Segurança e tranquilidade no fim da noite, em Belo Horizonte.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="zelo.min.css">
+<link rel="preload" href="assets/fonts/jost-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/zelo.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
-<body class="bg-white text-gray-900 antialiased">
+<body>
 
-<header id="navbar" class="fixed top-0 left-0 right-0 z-40">
-  <nav class="max-w-[1200px] mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
-    <a href="index.html" class="text-xl font-extrabold tracking-tight">ZELO</a>
-    <a href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais." target="_blank" rel="noopener"
-       class="flex items-center gap-2 bg-success text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:brightness-110 transition">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24z"/></svg>
-      WhatsApp
-    </a>
-  </nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><polyline points="5 9 12 16 19 9"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 13 12 19 18 13"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="4.5 12.5 9.5 17.5 19.5 7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 19.5l1.3-3.9A7.6 7.6 0 1112 19.6a7.7 7.7 0 01-3.9-1L4 19.5z"/><path style="stroke:var(--acc,currentColor)" d="M8.8 10.4h6.4M8.8 13.4h4.2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.2-5.7 6.2-10.7a6.2 6.2 0 00-12.4 0C5.8 15.3 12 21 12 21z"/><circle style="stroke:var(--acc,currentColor)" cx="12" cy="10.3" r="2.3"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11.2L12 4l8.5 7.2"/><path d="M5.6 9.6V20h12.8V9.6"/><path style="stroke:var(--acc,currentColor)" d="M9.6 20v-5.6h4.8V20"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.2 3v5.6c0 4.5-3.1 8.2-7.2 9.6-4.1-1.4-7.2-5.1-7.2-9.6V6L12 3z"/><polyline style="stroke:var(--acc,currentColor)" points="8.7 12.2 11.1 14.6 15.4 9.8"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3.2" y="5" width="17.6" height="14" rx="2.2"/><circle style="stroke:var(--acc,currentColor)" cx="9" cy="10.8" r="2.2"/><path d="M5.7 16.2c.6-1.6 1.8-2.4 3.3-2.4s2.7.8 3.3 2.4"/><line x1="14.6" y1="10" x2="18" y2="10"/><line x1="14.6" y1="13.4" x2="17" y2="13.4"/></symbol>
+  <symbol id="i-voice" viewBox="0 0 24 24"><path d="M4.6 13.6V12a7.4 7.4 0 0114.8 0v1.6"/><rect x="3.4" y="13" width="4" height="6.2" rx="1.6"/><rect x="16.6" y="13" width="4" height="6.2" rx="1.6"/><path style="stroke:var(--acc,currentColor)" d="M18.6 19.2c0 1.4-1.7 2.3-4.2 2.3"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M3.5 15.6v-3.2l2-4.2A2 2 0 017.3 7h9.4a2 2 0 011.8 1.2l2 4.2v3.2"/><path d="M3.5 15.6h17"/><circle cx="7.4" cy="16.6" r="1.9"/><circle cx="16.6" cy="16.6" r="1.9"/><path style="stroke:var(--acc,currentColor)" d="M6.2 12.2h11.6"/></symbol>
+  <symbol id="i-money" viewBox="0 0 24 24"><rect x="3" y="6.5" width="18" height="11" rx="2"/><circle style="stroke:var(--acc,currentColor)" cx="12" cy="12" r="2.6"/><path d="M6.4 9.6v.01M17.6 14.4v.01"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><polyline style="stroke:var(--acc,currentColor)" points="12 7.3 12 12 15.2 14"/></symbol>
+  <symbol id="i-form" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.6V3h6v1.6"/><path style="stroke:var(--acc,currentColor)" d="M8.6 10h6.8M8.6 13.5h6.8M8.6 17h4"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.8" y="5.2" width="16.4" height="15" rx="2"/><path d="M3.8 9.6h16.4M8 3.4v3.4M16 3.4v3.4"/><circle style="stroke:var(--acc,currentColor)" cx="12" cy="14.8" r="2"/></symbol>
+  <symbol id="i-steering" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle style="stroke:var(--acc,currentColor)" cx="12" cy="12" r="2.2"/><path d="M3.6 10.6c2.7-.9 5.5-1.3 8.4-1.3s5.7.4 8.4 1.3M10.2 14.1l-3.3 6M13.8 14.1l3.3 6"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path style="stroke:var(--acc,currentColor)" d="M14 14h2.6v2.6H14zM18.2 18.2h1.8M20 14v1.6M14 20h1.6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="3" width="11" height="18" rx="2.4"/><path d="M10.5 18h3"/><path style="stroke:var(--acc,currentColor)" d="M9.4 9.6l2 2 3.2-3.6"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 016.5 5H18v2.5"/><rect x="4" y="7.5" width="16.5" height="12" rx="2"/><circle style="stroke:var(--acc,currentColor)" cx="16" cy="13.5" r="1.4"/></symbol>
+  <symbol id="i-parking" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path style="stroke:var(--acc,currentColor)" d="M10 16.5v-9h3a2.6 2.6 0 010 5.2h-3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3L12 4z"/><path style="stroke:var(--acc,currentColor)" d="M12 10v4.2M12 16.8v.01"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13l1.5 5"/><path d="M4 9.5c0 1.5 1.2 2.5 2.7 2.5S9.3 11 9.3 9.5c0 1.5 1.2 2.5 2.7 2.5s2.7-1 2.7-2.5c0 1.5 1.2 2.5 2.6 2.5S20 11 20 9.5"/><path d="M5.5 12v8h13v-8"/><path style="stroke:var(--acc,currentColor)" d="M10 20v-4.5h4V20"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.4" r="3.6"/><path d="M5 20c.9-3.6 3.7-5.6 7-5.6s6.1 2 7 5.6"/></symbol>
+</svg>
+
+<a class="z-skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="z-header" data-header>
+  <div class="z-wrap z-header__inner">
+    <a class="z-wordmark" href="index.html" aria-label="ZELO, página inicial">ZELO</a>
+    <nav class="z-header__nav" aria-label="Principal">
+      <a href="zelo-landing-cliente.html">Preciso de uma volta</a>
+      <a href="zelo-landing-motorista.html">Sou motorista</a>
+      <a href="zelo-landing-page.html">Para estabelecimentos</a>
+    </nav>
+    <button class="z-menu-btn" type="button" data-menu-open aria-expanded="false" aria-controls="z-menu">
+      <span></span><span></span><span class="sr-only">Abrir menu</span>
+    </button>
+  </div>
 </header>
 
-<main>
+<div class="z-menu" id="z-menu" hidden role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="z-menu__close" type="button" data-menu-close aria-label="Fechar menu"><svg class="z-ico"><use href="#i-close"/></svg></button>
+  <a class="z-menu__band" style="--i:0;--band:#3d3d43" href="zelo-landing-cliente.html">Preciso de uma volta <small>Vá para casa no seu carro</small></a>
+  <a class="z-menu__band" style="--i:1;--band:#333338" href="zelo-landing-motorista.html">Sou motorista <small>Vagas na fase piloto</small></a>
+  <a class="z-menu__band" style="--i:2;--band:#29292e" href="zelo-landing-page.html">Para estabelecimentos <small>Parceria e Pacote Parceiro</small></a>
+  <a class="z-menu__band" style="--i:3;--band:#6D1523;--band-hover:#4E0F19" href="zelo-landing-cliente.html#calculadora">Simular o preço <small>Estimativa em segundos</small></a>
+  <a class="z-menu__band z-menu__band--cta" style="--i:4" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais." target="_blank" rel="noopener">Falar no WhatsApp <small>(31) 97361-9814</small></a>
+</div>
 
-  <section class="pt-40 pb-16 lg:pt-52 lg:pb-24 px-6 lg:px-8 bg-accent text-white">
-    <div class="max-w-[800px] mx-auto text-center">
-      <span class="inline-block text-xs font-semibold uppercase tracking-wide text-white/60 border border-white/20 rounded-full px-4 py-1.5 mb-6">
-        Belo Horizonte
-      </span>
-      <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
-        Seu carro. Sua segurança. Sua tranquilidade.
-      </h1>
-      <p class="text-lg lg:text-xl text-white/70 leading-relaxed max-w-xl mx-auto">
-        O ZELO leva você e o seu próprio veículo para casa com segurança no fim da noite. Escolha abaixo por onde você quer entrar.
-      </p>
+<main id="conteudo">
+
+  <!-- HERO -->
+  <section class="z-hero" data-hero>
+    <div class="z-road" aria-hidden="true">
+      <div class="z-road__plane">
+        <div class="z-road__lamps z-road__lamps--top"></div>
+        <div class="z-road__dash" style="top:27.5%"></div>
+        <div class="z-road__dash" style="top:72.5%"></div>
+        <div class="z-lane z-lane--back" style="top:16%"><i class="z-veh" style="--d:23s;--o:-3s"></i><i class="z-veh z-veh--light" style="--d:23s;--o:-11s"></i><i class="z-veh" style="--d:23s;--o:-18s"></i></div>
+        <div class="z-lane z-lane--back" style="top:39%"><i class="z-veh z-veh--light" style="--d:18s;--o:-6s"></i><i class="z-veh" style="--d:18s;--o:-14s"></i></div>
+        <div class="z-lane" style="top:61%"><i class="z-veh" style="--d:16s;--o:-1s"></i><i class="z-veh z-veh--light" style="--d:16s;--o:-7s"></i><i class="z-veh" style="--d:16s;--o:-12.5s"></i></div>
+        <div class="z-lane" style="top:84%"><i class="z-veh" style="--d:21s;--o:-4s"></i><i class="z-veh" style="--d:21s;--o:-15s"></i></div>
+        <div class="z-road__lamps z-road__lamps--bottom"></div>
+      </div>
     </div>
+    <div class="z-hero__veil"></div>
+
+    <div class="z-hero__stage">
+      <div class="z-hero__circle">
+        <h1 class="z-hero__title">
+          <span class="l"><span style="--i:0">Seu carro.</span></span>
+          <span class="l"><span style="--i:1">Sua segurança.</span></span>
+          <span class="l"><span style="--i:2">Sua tranquilidade.</span></span>
+        </h1>
+        <p class="z-hero__text">O ZELO leva você e o seu próprio veículo para casa com segurança no fim da noite.</p>
+        <div class="z-hero__links"><a class="z-more" href="zelo-landing-cliente.html#calculadora">Simular o preço</a></div>
+        <a class="z-hero__action" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais." target="_blank" rel="noopener">
+          <span class="z-dot"><svg class="z-ico"><use href="#i-wa"/></svg></span>
+          <span>Chamar no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <p class="z-hero__foot">Atendimento noturno em Belo Horizonte</p>
+    <a class="z-hero__cue" href="#para-quem" aria-label="Ir para o conteúdo"><svg class="z-ico"><use href="#i-down"/></svg></a>
   </section>
 
-  <section class="pb-24 lg:pb-32 px-6 lg:px-8">
-    <div class="max-w-[1200px] mx-auto grid md:grid-cols-3 gap-6 lg:gap-8">
-
-      <a href="zelo-landing-cliente.html" class="route-card reveal bg-accent text-white rounded-2xl p-8 flex flex-col">
-        <div class="bg-white/10 border border-white/20 rounded-full p-3 w-fit">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 17h14M5 17a2 2 0 100 4 2 2 0 000-4zm14 0a2 2 0 100 4 2 2 0 000-4zM5 17V7a2 2 0 012-2h6l4 4h2a2 2 0 012 2v6"/></svg>
+  <!-- PARA QUEM É -->
+  <section class="z-section" id="para-quem">
+    <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(78vw,640px)" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+    <div class="z-wrap">
+      <div class="z-head"><h2 class="z-title">Para quem é o ZELO</h2></div>
+      <div class="z-feature">
+        <div class="z-feature__main" data-reveal>
+          <h3>Preciso de uma volta</h3>
+          <p>Bebeu? Vá para casa no seu próprio carro, com segurança e rapidez.</p>
+          <a class="z-circle-link" href="zelo-landing-cliente.html"><span class="z-circle"><svg class="z-ico"><use href="#i-right"/></svg></span>Ver como funciona</a>
         </div>
-        <h2 class="text-xl font-bold tracking-tight mt-6">Preciso de uma volta</h2>
-        <p class="text-white/70 mt-2 flex-1">Bebeu? Vá para casa no seu próprio carro, com segurança e rapidez.</p>
-        <span class="inline-flex items-center gap-1 font-semibold mt-6 text-sm">
-          Chamar agora
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </span>
-      </a>
 
-      <a href="zelo-landing-motorista.html" class="route-card reveal bg-white border border-gray-200 rounded-2xl p-8 flex flex-col">
-        <div class="bg-gray-50 border border-gray-200 rounded-full p-3 w-fit">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <figure class="z-feature__media z-map" data-route>
+          <svg viewBox="0 0 400 400" role="img" aria-label="Mapa ilustrado de uma rota do bar até a casa do cliente">
+            <defs>
+              <clipPath id="map-clip"><circle cx="200" cy="200" r="200"/></clipPath>
+              <path id="map-route" d="M90 306 L90 270 L234 126 L306 126 L306 90"/>
+            </defs>
+            <g clip-path="url(#map-clip)">
+              <rect width="400" height="400" fill="#19191d"/>
+              <rect x="166" y="210" width="68" height="52" rx="4" fill="#1d2321"/>
+              <g class="z-map__street">
+                <path d="M18 0V400M54 0V400M90 0V400M126 0V400M162 0V400M198 0V400M234 0V400M270 0V400M306 0V400M342 0V400M378 0V400"/>
+                <path d="M0 18H400M0 54H400M0 90H400M0 126H400M0 162H400M0 198H400M0 234H400M0 270H400M0 306H400M0 342H400M0 378H400"/>
+              </g>
+              <g class="z-map__avenue">
+                <path d="M-40 400L400 -40"/>
+                <path d="M-40 220L220 -40"/>
+                <path d="M180 440L440 180"/>
+                <path d="M-20 20L380 420"/>
+                <path d="M30 -20C120 60 250 80 420 40"/>
+              </g>
+              <path class="z-map__glow" pathLength="1" d="M90 306 L90 270 L234 126 L306 126 L306 90"/>
+              <path class="z-map__route" pathLength="1" d="M90 306 L90 270 L234 126 L306 126 L306 90"/>
+              <circle r="7" fill="#fff" stroke="#D3263A" stroke-width="3">
+                <animateMotion dur="2.6s" begin="indefinite" fill="freeze" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines=".45 0 .2 1"><mpath href="#map-route"/></animateMotion>
+              </circle>
+              <circle cx="90" cy="306" r="11" fill="#fff"/>
+              <circle cx="90" cy="306" r="4.5" fill="#19191d"/>
+              <circle cx="306" cy="90" r="24" fill="none" stroke="#D3263A" stroke-opacity=".45" stroke-width="1.5"/>
+              <circle cx="306" cy="90" r="14" fill="#D3263A"/>
+              <path d="M300 91.5l6-5 6 5M302 90v6h8v-6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </figure>
+
+        <ul class="z-feature__list" data-reveal style="--delay:.15s">
+          <li><a href="zelo-landing-motorista.html">
+            <h3>Sou motorista</h3>
+            <p>Dirija sem ter carro próprio. Ganhe por corrida, com flexibilidade de horário.</p>
+            <span class="z-mini">Quero me candidatar</span>
+          </a></li>
+          <li><a href="zelo-landing-page.html">
+            <h3>Tenho um estabelecimento</h3>
+            <p>Leve segurança para seus clientes e seja parceiro de divulgação do ZELO.</p>
+            <span class="z-mini">Quero ser parceiro</span>
+          </a></li>
+        </ul>
+      </div>
+    </div>
+    <span class="z-watermark" aria-hidden="true">Sua volta</span>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="z-section z-section--white" id="como-funciona">
+    <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(70vw,560px)" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+    <div class="z-wrap">
+      <div class="z-head">
+        <h2 class="z-title">Como funciona</h2>
+        <a class="z-more" href="zelo-landing-cliente.html#calculadora">Simular o preço</a>
+      </div>
+      <div class="z-steps" data-carousel>
+        <div class="z-steps__aside">
+          <span class="z-index" data-index aria-hidden="true">01</span>
+          <div class="z-arrows">
+            <button class="z-arrow" type="button" data-prev aria-label="Passo anterior"><svg class="z-ico"><use href="#i-left"/></svg></button>
+            <button class="z-arrow" type="button" data-next aria-label="Próximo passo"><svg class="z-ico"><use href="#i-right"/></svg></button>
+          </div>
         </div>
-        <h2 class="text-xl font-bold tracking-tight mt-6">Sou motorista</h2>
-        <p class="text-gray-500 mt-2 flex-1">Dirija sem ter carro próprio. Ganhe por corrida, com flexibilidade de horário.</p>
-        <span class="inline-flex items-center gap-1 font-semibold mt-6 text-sm">
-          Quero me candidatar
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </span>
-      </a>
+        <ol class="z-track" data-track>
+          <li class="z-step">
+            <div class="z-tile" style="--acc:#D3263A"><span class="z-step__n" aria-hidden="true">01</span><svg class="z-ico"><use href="#i-chat"/></svg></div>
+            <h3>Chame pelo WhatsApp</h3>
+            <p>Sem aplicativo, sem cadastro. Uma mensagem e pronto, você já está sendo atendido.</p>
+          </li>
+          <li class="z-step">
+            <div class="z-tile" style="--acc:#D3263A"><span class="z-step__n" aria-hidden="true">02</span><svg class="z-ico"><use href="#i-pin"/></svg></div>
+            <h3>Motorista a caminho</h3>
+            <p>Equipe dimensionada para os horários de maior movimento da noite, sem a imprevisibilidade de apps genéricos.</p>
+          </li>
+          <li class="z-step">
+            <div class="z-tile z-tile--red" style="--acc:#fff"><span class="z-step__n" aria-hidden="true">03</span><svg class="z-ico"><use href="#i-home"/></svg></div>
+            <h3>Você vai para casa no seu carro</h3>
+            <p>O motorista ZELO dirige o seu próprio veículo até sua casa. Você chega com conforto, e seu carro chega com você.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <span class="z-watermark" aria-hidden="true">Simples assim</span>
+  </section>
 
-      <a href="zelo-landing-page.html" class="route-card reveal bg-white border border-gray-200 rounded-2xl p-8 flex flex-col">
-        <div class="bg-gray-50 border border-gray-200 rounded-full p-3 w-fit">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M13 21V11l6 3v7M9 9v.01M9 12v.01M9 15v.01"/></svg>
+  <!-- O CARRO VOLTA COM VOCÊ -->
+  <section class="z-section" id="seu-carro">
+    <div class="z-wrap">
+      <div class="z-head"><h2 class="z-title">O carro volta com você</h2></div>
+      <div class="z-show">
+        <figure class="z-show__car" data-reveal>
+          <span class="z-show__shadow" aria-hidden="true"></span>
+          <svg viewBox="0 0 660 220" role="img" aria-label="Ilustração de um carro de passeio, visto de lado">
+            <defs>
+              <linearGradient id="car-body" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FAFAFB"/><stop offset=".45" stop-color="#E2E2E6"/><stop offset="1" stop-color="#A9A9B2"/>
+              </linearGradient>
+              <linearGradient id="car-glass" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#3a3a44"/><stop offset=".55" stop-color="#1c1c22"/><stop offset="1" stop-color="#2b2b33"/>
+              </linearGradient>
+              <radialGradient id="car-rim" cx=".4" cy=".35" r=".75">
+                <stop offset="0" stop-color="#e9e9ee"/><stop offset="1" stop-color="#8c8c96"/>
+              </radialGradient>
+              <filter id="car-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+            </defs>
+            <ellipse cx="330" cy="190" rx="290" ry="9" fill="#26262B" opacity=".18"/>
+            <path d="M104 168 A46 46 0 1 1 196 168 Z M442 168 A46 46 0 1 1 534 168 Z" fill="#2b2b31"/>
+            <path fill="url(#car-body)" d="M60 168 C50 162 48 147 52 133 L58 115 C62 104 74 98 92 96 L170 92 C198 70 238 52 288 46 L384 44 C422 46 454 62 488 88 C532 92 574 98 598 108 C610 114 614 126 612 140 L608 160 C606 166 600 168 592 168 L534 168 A46 46 0 1 0 442 168 L196 168 A46 46 0 1 0 104 168 Z"/>
+            <path d="M196 156 L442 156 L442 168 L196 168 Z" fill="#26262B" fill-opacity=".1"/>
+            <path fill="url(#car-glass)" d="M188 92 C212 74 244 61 290 56 L382 54 C412 56 438 69 464 89 Z"/>
+            <path d="M322 54 L326 91" stroke="#d9d9de" stroke-width="7"/>
+            <path d="M92 104 C200 98 420 96 592 108" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2"/>
+            <path d="M326 94 L330 164 M200 120 L560 118" fill="none" stroke="#26262B" stroke-opacity=".12" stroke-width="1.5"/>
+            <rect x="362" y="106" width="24" height="4" rx="2" fill="#26262B" fill-opacity=".28"/>
+            <rect x="244" y="107" width="24" height="4" rx="2" fill="#26262B" fill-opacity=".28"/>
+            <path d="M456 84 L474 82 L476 92 L460 93 Z" fill="#c6c6cc"/>
+            <path d="M574 108 C588 110 600 113 606 118 L578 117 Z" fill="#fff" filter="url(#car-glow)"/>
+            <path d="M574 108 C588 110 600 113 606 118 L578 117 Z" fill="#ffffff"/>
+            <path d="M60 113 L80 109 L82 117 L61 121 Z" fill="#ff3a4f" filter="url(#car-glow)"/>
+            <path d="M60 113 L80 109 L82 117 L61 121 Z" fill="#ff3a4f"/>
+            <g>
+              <circle cx="150" cy="166" r="38" fill="#1b1b1f"/>
+              <circle cx="150" cy="166" r="25" fill="url(#car-rim)"/>
+              <g stroke="#6e6e78" stroke-width="3" stroke-linecap="round"><path d="M150 145V158M130 160L142 163M138 184L145 173M162 184L155 173M170 160L158 163"/></g>
+              <circle cx="150" cy="166" r="6" fill="#5d5d66"/>
+            </g>
+            <g>
+              <circle cx="488" cy="166" r="38" fill="#1b1b1f"/>
+              <circle cx="488" cy="166" r="25" fill="url(#car-rim)"/>
+              <g stroke="#6e6e78" stroke-width="3" stroke-linecap="round"><path d="M488 145V158M468 160L480 163M476 184L483 173M500 184L493 173M508 160L496 163"/></g>
+              <circle cx="488" cy="166" r="6" fill="#5d5d66"/>
+            </g>
+          </svg>
+        </figure>
+        <div class="z-show__text" data-reveal style="--delay:.2s">
+          <h3>Você e o carro chegam juntos</h3>
+          <p>O motorista ZELO dirige o seu próprio veículo até sua casa. Você não precisa voltar no dia seguinte para buscar o carro.</p>
         </div>
-        <h2 class="text-xl font-bold tracking-tight mt-6">Tenho um estabelecimento</h2>
-        <p class="text-gray-500 mt-2 flex-1">Leve segurança para seus clientes e seja parceiro de divulgação do ZELO.</p>
-        <span class="inline-flex items-center gap-1 font-semibold mt-6 text-sm">
-          Quero ser parceiro
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </span>
-      </a>
+      </div>
+    </div>
+    <span class="z-watermark" aria-hidden="true">Seu carro</span>
+  </section>
 
+  <!-- SEGURANÇA -->
+  <section class="z-section z-section--white" id="seguranca">
+    <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(70vw,560px)" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+    <div class="z-wrap">
+      <div class="z-head">
+        <h2 class="z-title">Sua segurança em primeiro lugar</h2>
+        <a class="z-more" href="zelo-landing-cliente.html">Saiba mais</a>
+      </div>
+      <div class="z-cards">
+        <article class="z-card" data-reveal>
+          <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-shield"/></svg></div>
+          <h3>Motorista verificado</h3>
+          <p>Todo motorista ZELO passa por verificação antes de atender. Você sabe exatamente quem está dirigindo o seu carro.</p>
+        </article>
+        <article class="z-card" data-reveal style="--delay:.12s">
+          <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-id"/></svg></div>
+          <h3>Identificação antes da chegada</h3>
+          <p>Você recebe o nome e a identificação do motorista antes dele chegar até você.</p>
+        </article>
+        <article class="z-card" data-reveal style="--delay:.24s">
+          <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-voice"/></svg></div>
+          <h3>Atendimento humano</h3>
+          <p>Fase piloto com atendimento direto. Se precisar, você fala com gente de verdade, não com um chatbot.</p>
+        </article>
+      </div>
+    </div>
+    <span class="z-watermark" aria-hidden="true">Segurança</span>
+  </section>
+
+  <!-- CHAMADA FINAL -->
+  <section class="z-section z-wine z-cta">
+    <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(90vw,720px)" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
+    <div class="z-wrap">
+      <h2 class="z-title"><span class="z-line">Chegou a hora de ir para casa?</span> <span class="z-line">Seu carro vai com você.</span></h2>
+      <div class="z-cta__actions">
+        <a class="z-btn z-btn--white" href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais." target="_blank" rel="noopener"><svg class="z-ico"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+        <a class="z-btn z-btn--light" href="zelo-landing-cliente.html#calculadora">Simular o preço</a>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer class="py-16 px-6 lg:px-8 border-t border-gray-200">
-  <div class="max-w-[1200px] mx-auto grid sm:grid-cols-3 gap-8 text-sm">
-    <div><span class="text-xl font-extrabold tracking-tight">ZELO</span></div>
-    <div>
-      <p class="font-semibold mb-2">Navegação</p>
-      <a href="zelo-landing-cliente.html" class="block text-gray-500 hover:text-black transition-colors">Preciso de uma volta</a>
-      <a href="zelo-landing-motorista.html" class="block text-gray-500 hover:text-black transition-colors">Sou motorista</a>
-      <a href="zelo-landing-page.html" class="block text-gray-500 hover:text-black transition-colors">Sou um estabelecimento</a>
+<footer class="z-footer">
+  <div class="z-wrap">
+    <div class="z-footer__top">
+      <div class="z-footer__brand">
+        <a class="z-wordmark" href="index.html">ZELO</a>
+        <p>Segurança e tranquilidade no fim da noite, em Belo Horizonte.</p>
+      </div>
+      <div class="z-footer__col">
+        <h4>Para você</h4>
+        <a href="zelo-landing-cliente.html">Preciso de uma volta</a>
+        <a href="zelo-landing-cliente.html#calculadora">Simular o preço</a>
+      </div>
+      <div class="z-footer__col">
+        <h4>Trabalhe com o ZELO</h4>
+        <a href="zelo-landing-motorista.html">Sou motorista</a>
+        <a href="zelo-landing-page.html">Para estabelecimentos</a>
+      </div>
+      <div class="z-footer__col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais." target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:zeloomotoristaamigo@gmail.com">E-mail</a>
+      </div>
     </div>
-    <div>
-      <p class="font-semibold mb-2">Contato</p>
-      <a href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais." class="block text-gray-500 hover:text-black transition-colors">WhatsApp</a>
-      <a href="mailto:zeloomotoristaamigo@gmail.com" class="block text-gray-500 hover:text-black transition-colors">E-mail</a>
-    </div>
-  </div>
-  <div class="max-w-[1200px] mx-auto mt-10 pt-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between gap-4 text-xs text-gray-400">
-    <p>&copy; 2026 ZELO — Belo Horizonte, MG</p>
-    <div class="flex gap-4">
-      <a href="#" class="hover:text-gray-600">Política de Privacidade</a>
-      <a href="#" class="hover:text-gray-600">Termos de Uso</a>
+    <div class="z-footer__legal">
+      <p>&copy; 2026 ZELO — Belo Horizonte, MG</p>
+      <div><a href="#">Política de Privacidade</a><a href="#">Termos de Uso</a></div>
     </div>
   </div>
 </footer>
 
-<script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 80);
-  });
+<a class="z-float" id="floating-wa" data-float href="https://wa.me/5531973619814?text=Ol%C3%A1%2C%20ZELO%21%20Vim%20pelo%20site%20e%20quero%20saber%20mais." target="_blank" rel="noopener" aria-label="Falar com o ZELO no WhatsApp"><svg class="z-ico"><use href="#i-wa"/></svg></a>
 
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('is-visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => observer.observe(el));
-</script>
-
+<script src="assets/zelo.js" defer></script>
 </body>
 </html>

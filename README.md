@@ -1,23 +1,32 @@
 # ZELO — Landing Pages
 
-Site institucional do ZELO (O Motorista Amigo), Belo Horizonte — 4 páginas estáticas (HTML + Tailwind CSS compilado + JS vanilla), sem dependência de build em produção.
+Site institucional do ZELO (O Motorista Amigo), Belo Horizonte — 4 páginas estáticas (HTML + CSS + JS vanilla), sem build e sem dependência externa em produção.
+
+Visual (out/2026): linguagem inspirada na DiDi — hero noturno em tela cheia com estrada vista de cima, círculo translúcido com o título, botões circulares, títulos leves em caixa-alta, palavras em marca-d'água e menu em faixas. Cores do ZELO: vermelho lanterna para ação, bordô da marca nas faixas de destaque.
 
 ## Estrutura
 
 ```
-index.html                     → Hub (porta de entrada, direciona para as 3 páginas abaixo)
-zelo-landing-cliente.html      → Página para o passageiro (quem vai usar o serviço)
-zelo-landing-motorista.html    → Página de recrutamento de motoristas
-zelo-landing-page.html         → Página para estabelecimentos parceiros (bares/restaurantes)
-zelo.min.css                   → CSS compilado do Tailwind (gerado via Tailwind CLI, não via CDN)
+index.html                     → Página inicial (para quem é, como funciona, segurança)
+zelo-landing-cliente.html      → Passageiro: comparativo, números, simulador de preço, FAQ
+zelo-landing-motorista.html    → Recrutamento: simulador de ganhos, requisitos, candidatura
+zelo-landing-page.html         → Estabelecimentos: cashback, Pacote Parceiro, cadastro
+assets/zelo.css                → Todo o visual (cores e componentes)
+assets/zelo.js                 → Cabeçalho, menu, carrosséis, contadores e animações de entrada
+assets/fonts/                  → Fonte Jost (licença OFL), hospedada no próprio site
 formularios/apps-script.gs     → Backend dos formulários (Google Apps Script + planilha)
 ```
 
+## Como editar
+
+- **Cores:** no topo de `assets/zelo.css` (`:root`). `--z-red` é o vermelho dos botões; `--z-wine` é o bordô da marca.
+- **Tarifas das calculadoras:** objeto `TARIFA` no fim de `zelo-landing-cliente.html` e de `zelo-landing-motorista.html` (os dois precisam ficar iguais).
+- **Cabeçalho, menu, ícones e rodapé** se repetem nas 4 páginas: altere nas 4.
+- **Animações:** quem ativa "reduzir movimento" no celular vê o site sem animação; a estrada do topo pausa quando sai da tela.
+
 ## Rodando localmente
 
-Não precisa de servidor nem de build — é só abrir os arquivos num navegador, mantendo todos na mesma pasta (o `zelo.min.css` precisa estar ao lado dos `.html`).
-
-Para testar como em produção (recomendado, especialmente no celular):
+Use um servidor local (a fonte não carrega abrindo o arquivo direto):
 ```bash
 npx serve .
 ```
@@ -34,6 +43,6 @@ Publicado no Render (Static Site, publish directory `.`): cada push na `main` at
 
 ## Pendências conhecidas
 
-- Logo em texto ("ZELO") na navbar/footer — trocar por SVG da marca quando aprovado.
-- Formulários ativos: planilha "ZELO — Cadastros do site" (conta pessoal do fundador) via Apps Script.
-- Imagens reais nos placeholders e domínio próprio.
+- Logo em texto ("ZELO") no cabeçalho e rodapé — trocar por SVG da marca quando aprovado.
+- Ilustrações no lugar de fotos (estrada, mapa, carro e telas com ícones) — trocar por fotos reais quando houver.
+- Política de Privacidade e Termos de Uso (links ainda sem destino) e domínio próprio.
