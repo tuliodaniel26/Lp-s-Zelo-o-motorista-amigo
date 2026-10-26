@@ -71,7 +71,7 @@
     };
     requestAnimationFrame(tick);
   };
-  const revealTargets = document.querySelectorAll('[data-reveal], .z-ring, .z-map, [data-count], [data-route]');
+  const revealTargets = document.querySelectorAll('[data-reveal], .z-ring, .z-map, [data-count]');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -79,10 +79,6 @@
         const el = entry.target;
         el.classList.add('is-in');
         if (el.dataset.count) runCount(el);
-        if (el.hasAttribute('data-route')) {
-          const motion = el.querySelector('animateMotion');
-          if (motion && !reduce && motion.beginElement) { try { motion.beginElement(); } catch (_) {} }
-        }
         io.unobserve(el);
       });
     }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
@@ -123,4 +119,19 @@
     new IntersectionObserver(([e]) => hero.classList.toggle('is-paused', !e.isIntersecting)).observe(hero);
   }
   document.addEventListener('visibilitychange', () => { if (hero) hero.classList.toggle('is-paused', document.hidden); });
+
+  /* ---------- Movimento das outras telas: só roda com a seção visível ---------- */
+  const players = document.querySelectorAll('[data-play]');
+  const smil = (el, play) => el.querySelectorAll('svg[data-smil]').forEach((svg) => {
+    if (!svg.pauseAnimations) return;
+    if (play) svg.unpauseAnimations(); else svg.pauseAnimations();
+  });
+  players.forEach((el) => smil(el, false)); // tudo começa parado
+  if (!reduce && 'IntersectionObserver' in window) {
+    const po = new IntersectionObserver((entries) => entries.forEach((e) => {
+      e.target.classList.toggle('is-playing', e.isIntersecting);
+      smil(e.target, e.isIntersecting);
+    }), { threshold: 0.05 });
+    players.forEach((el) => po.observe(el));
+  }
 })();

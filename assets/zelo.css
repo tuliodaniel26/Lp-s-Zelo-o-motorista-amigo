@@ -178,7 +178,7 @@ strong { font-weight: 600; }
 }
 .z-road { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: radial-gradient(120% 90% at 50% 40%, #17171b 0%, #0c0c0f 100%); }
 .z-road__plane {
-  position: absolute; left: 50%; top: 52%; width: 260vmax; height: clamp(280px, 60vmin, 640px);
+  position: absolute; left: 50%; top: 52%; width: 150vmax; height: clamp(280px, 60vmin, 640px);
   transform: translate(-50%, -50%) rotate(-21deg);
   background:
     linear-gradient(to bottom,
@@ -199,20 +199,30 @@ strong { font-weight: 600; }
 .z-lane { position: absolute; left: 0; width: 100%; height: 0; }
 .z-lane--back { transform: scaleX(-1); }
 .z-veh {
-  position: absolute; left: 0; top: 0; width: 5.4vmin; height: 2.5vmin; margin-top: -1.25vmin; border-radius: .9vmin;
+  --cw: clamp(27px, 5.4vmin, 64px); --ch: clamp(13px, 2.5vmin, 30px);
+  position: absolute; left: 0; top: 0; width: var(--cw); height: var(--ch); margin-top: calc(var(--ch) / -2); border-radius: calc(var(--ch) * .36);
   background: linear-gradient(90deg, #2b2b31, #44444c 55%, #2f2f36); box-shadow: inset 0 0 0 1px rgba(255,255,255,.07);
   animation: zDrive var(--d, 16s) linear var(--o, 0s) infinite; will-change: transform;
 }
 .z-veh::before { /* farol */
-  content: ""; position: absolute; left: 90%; top: 50%; width: 13vmin; height: 4.6vmin; transform: translateY(-50%);
+  content: ""; position: absolute; left: 90%; top: 50%; width: calc(var(--cw) * 2.4); height: calc(var(--ch) * 1.85); transform: translateY(-50%);
   background: radial-gradient(ellipse 100% 50% at 0% 50%, rgba(255,246,228,.42), rgba(255,246,228,0) 72%);
 }
 .z-veh::after { /* lanterna */
-  content: ""; position: absolute; right: 97%; top: 14%; bottom: 14%; width: .4vmin; border-radius: 2px;
-  background: #ff3a4f; box-shadow: 0 0 1.8vmin .6vmin rgba(255, 44, 70, .5);
+  content: ""; position: absolute; right: 97%; top: 14%; bottom: 14%; width: 2px; border-radius: 2px;
+  background: #ff3a4f; box-shadow: 0 0 calc(var(--ch) * .7) calc(var(--ch) * .22) rgba(255, 44, 70, .5);
 }
 .z-veh--light { background: linear-gradient(90deg, #6d6d76, #a3a3ad 55%, #73737c); }
-@keyframes zDrive { from { transform: translateX(-14vmin); } to { transform: translateX(262vmax); } }
+.z-veh--white { background: linear-gradient(90deg, #b9b9c1, #ececf0 55%, #c2c2ca); }
+.z-veh--wine { background: linear-gradient(90deg, #4a0f19, #7a1a2b 55%, #521220); }
+/* rastros de luz (fotografia de longa exposição) */
+.z-trail {
+  position: absolute; left: 0; top: 0; width: 24vmax; height: 2px; margin-top: -1px; border-radius: 2px;
+  background: linear-gradient(90deg, rgba(255,244,226,0), rgba(255,244,226,.55));
+  animation: zDrive var(--d, 5s) linear var(--o, 0s) infinite; will-change: transform;
+}
+.z-trail--red { background: linear-gradient(90deg, rgba(255,58,79,0), rgba(255,58,79,.6)); }
+@keyframes zDrive { from { transform: translateX(-10vmax); } to { transform: translateX(152vmax); } }
 .z-hero__veil {
   position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background:
@@ -220,7 +230,7 @@ strong { font-weight: 600; }
     radial-gradient(ellipse 75% 65% at 50% 50%, rgba(12,12,15,0) 35%, rgba(12,12,15,.62) 78%, rgba(12,12,15,.9) 100%),
     linear-gradient(to bottom, rgba(12,12,15,.55) 0, rgba(12,12,15,0) 22%, rgba(12,12,15,0) 75%, rgba(12,12,15,.7) 100%);
 }
-.z-hero.is-paused .z-veh { animation-play-state: paused; }
+.z-hero.is-paused .z-veh, .z-hero.is-paused .z-trail { animation-play-state: paused; }
 
 .z-hero__stage { position: relative; display: flex; justify-content: center; width: 100%; min-width: 0; }
 .z-hero__circle {
@@ -590,7 +600,7 @@ strong { font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; transition-delay: 0s !important; }
-  .z-veh { animation: none !important; display: none; }
+  .z-veh, .z-trail, .z-trails, .z-wind { animation: none !important; display: none !important; }
   .js [data-reveal] { opacity: 1; }
   .js .z-ring circle, .js .z-map .z-map__route, .js .z-map .z-map__glow { stroke-dashoffset: 0; }
 }
@@ -635,3 +645,48 @@ strong { font-weight: 600; }
 .z-pill-note { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 15px; color: var(--z-wine); }
 .z-pill-note .z-ico { width: 18px; height: 18px; }
 @media (max-width: 1023.98px) { .z-ring { left: 50%; } }
+
+/* =========================================================================
+   Movimento nas outras telas (só roda enquanto a seção está visível)
+   ========================================================================= */
+/* rastros de farol e lanterna ao fundo das faixas escuras e bordô */
+.z-trails { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.z-trails i {
+  position: absolute; left: 0; top: var(--y, 50%); width: var(--w, 22vw); height: var(--h, 1.5px); border-radius: 2px;
+  background: linear-gradient(90deg, rgba(255,244,226,0), rgba(255,244,226,.38));
+  transform: translateX(-40vw); will-change: transform;
+}
+.z-trails i.r { background: linear-gradient(90deg, rgba(255,70,92,0), rgba(255,70,92,.55)); }
+.z-trails i.b { background: linear-gradient(270deg, rgba(255,70,92,0), rgba(255,70,92,.5)); transform: translateX(140vw); }
+.is-playing .z-trails i { animation: zTrail var(--d, 6s) linear var(--o, 0s) infinite; }
+.is-playing .z-trails i.b { animation-name: zTrailBack; }
+@keyframes zTrail { from { transform: translateX(-40vw); } to { transform: translateX(140vw); } }
+@keyframes zTrailBack { from { transform: translateX(140vw); } to { transform: translateX(-40vw); } }
+.z-wine .z-trails i { background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.3)); }
+.z-wine .z-trails i.b { background: linear-gradient(270deg, rgba(255,255,255,0), rgba(255,255,255,.26)); }
+
+/* vitrine: o carro "rodando" */
+.z-show__car { overflow: visible; }
+.z-wheel { transform-box: fill-box; transform-origin: center; }
+.is-playing .z-wheel { animation: zSpin .5s linear infinite; }
+@keyframes zSpin { to { transform: rotate(360deg); } }
+.z-show__body { transform-box: view-box; }
+.is-playing .z-show__body { animation: zBob 1.2s ease-in-out infinite; }
+@keyframes zBob { 50% { transform: translateY(-1.6px); } }
+.z-show__road {
+  position: absolute; left: -6%; right: -6%; bottom: 9%; height: 3px; z-index: -1; opacity: .9;
+  background: repeating-linear-gradient(90deg, #CFCFD5 0 40px, transparent 40px 84px);
+}
+.is-playing .z-show__road { animation: zRoad .42s linear infinite; }
+@keyframes zRoad { to { background-position: -84px 0; } }
+.z-wind { position: absolute; left: -2%; height: 2px; width: var(--w, 90px); top: var(--y, 50%); border-radius: 2px; background: linear-gradient(90deg, rgba(38,38,43,0), rgba(38,38,43,.18)); opacity: 0; }
+.is-playing .z-wind { animation: zWind var(--d, .9s) linear var(--o, 0s) infinite; }
+@keyframes zWind { 0% { transform: translateX(40px); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateX(-80px); opacity: 0; } }
+
+/* celular em pé: estrada mais larga e inclinada, círculo mais transparente — mais carros à vista */
+@media (orientation: portrait) {
+  .z-road__plane { height: clamp(300px, 56vh, 640px); transform: translate(-50%, -50%) rotate(-34deg); }
+}
+@media (max-width: 899.98px) {
+  .z-hero__circle { background: radial-gradient(circle at 50% 120%, rgba(109,21,35,.4), rgba(109,21,35,0) 60%), rgba(15,15,19,.44); }
+}

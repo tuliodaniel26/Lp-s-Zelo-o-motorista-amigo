@@ -84,10 +84,10 @@
         <div class="z-road__lamps z-road__lamps--top"></div>
         <div class="z-road__dash" style="top:27.5%"></div>
         <div class="z-road__dash" style="top:72.5%"></div>
-        <div class="z-lane z-lane--back" style="top:16%"><i class="z-veh" style="--d:23s;--o:-3s"></i><i class="z-veh z-veh--light" style="--d:23s;--o:-11s"></i><i class="z-veh" style="--d:23s;--o:-18s"></i></div>
-        <div class="z-lane z-lane--back" style="top:39%"><i class="z-veh z-veh--light" style="--d:18s;--o:-6s"></i><i class="z-veh" style="--d:18s;--o:-14s"></i></div>
-        <div class="z-lane" style="top:61%"><i class="z-veh" style="--d:16s;--o:-1s"></i><i class="z-veh z-veh--light" style="--d:16s;--o:-7s"></i><i class="z-veh" style="--d:16s;--o:-12.5s"></i></div>
-        <div class="z-lane" style="top:84%"><i class="z-veh" style="--d:21s;--o:-4s"></i><i class="z-veh" style="--d:21s;--o:-15s"></i></div>
+        <div class="z-lane z-lane--back" style="top:16%"><i class="z-veh" style="--d:13s;--o:-1s"></i><i class="z-veh z-veh--light" style="--d:13s;--o:-3.7s"></i><i class="z-veh" style="--d:13s;--o:-6.1s"></i><i class="z-veh z-veh--white" style="--d:13s;--o:-8.8s"></i><i class="z-veh" style="--d:13s;--o:-11.2s"></i><i class="z-trail" style="--d:4.8s;--o:-1.5s"></i></div>
+        <div class="z-lane z-lane--back" style="top:39%"><i class="z-veh z-veh--light" style="--d:10.5s;--o:-0.6s"></i><i class="z-veh" style="--d:10.5s;--o:-3.2s"></i><i class="z-veh z-veh--wine" style="--d:10.5s;--o:-5.7s"></i><i class="z-veh" style="--d:10.5s;--o:-8.3s"></i><i class="z-trail z-trail--red" style="--d:3.8s;--o:-2.6s"></i></div>
+        <div class="z-lane" style="top:61%"><i class="z-veh" style="--d:9.5s;--o:-0.4s"></i><i class="z-veh z-veh--white" style="--d:9.5s;--o:-2.4s"></i><i class="z-veh" style="--d:9.5s;--o:-4.6s"></i><i class="z-veh z-veh--light" style="--d:9.5s;--o:-6.5s"></i><i class="z-veh" style="--d:9.5s;--o:-8.3s"></i><i class="z-trail" style="--d:4.2s;--o:-0.8s"></i></div>
+        <div class="z-lane" style="top:84%"><i class="z-veh z-veh--light" style="--d:12s;--o:-1.8s"></i><i class="z-veh" style="--d:12s;--o:-4.6s"></i><i class="z-veh z-veh--wine" style="--d:12s;--o:-7.4s"></i><i class="z-veh" style="--d:12s;--o:-10.1s"></i><i class="z-trail z-trail--red" style="--d:5.2s;--o:-3.1s"></i></div>
         <div class="z-road__lamps z-road__lamps--bottom"></div>
       </div>
     </div>
@@ -125,8 +125,8 @@
           <a class="z-circle-link" href="zelo-landing-cliente.html"><span class="z-circle"><svg class="z-ico"><use href="#i-right"/></svg></span>Ver como funciona</a>
         </div>
 
-        <figure class="z-feature__media z-map" data-route>
-          <svg viewBox="0 0 400 400" role="img" aria-label="Mapa ilustrado de uma rota do bar até a casa do cliente">
+        <figure class="z-feature__media z-map" data-play>
+          <svg viewBox="0 0 400 400" data-smil role="img" aria-label="Mapa ilustrado de uma rota do bar até a casa do cliente, com carros circulando">
             <defs>
               <clipPath id="map-clip"><circle cx="200" cy="200" r="200"/></clipPath>
               <path id="map-route" d="M90 306 L90 270 L234 126 L306 126 L306 90"/>
@@ -147,8 +147,17 @@
               </g>
               <path class="z-map__glow" pathLength="1" d="M90 306 L90 270 L234 126 L306 126 L306 90"/>
               <path class="z-map__route" pathLength="1" d="M90 306 L90 270 L234 126 L306 126 L306 90"/>
+              <g fill="#d9d9df">
+                <circle r="3.6"><animateMotion dur="7s" begin="-2s" repeatCount="indefinite" path="M-20 162 H420"/></circle>
+                <circle r="3.6" fill="#ff6b7a"><animateMotion dur="6.5s" begin="-3s" repeatCount="indefinite" path="M420 234 H-20"/></circle>
+                <circle r="3.6"><animateMotion dur="6s" begin="-1s" repeatCount="indefinite" path="M342 420 V-20"/></circle>
+                <circle r="3.6" fill="#ff6b7a"><animateMotion dur="7.5s" begin="-4s" repeatCount="indefinite" path="M126 -20 V420"/></circle>
+                <circle r="3.6"><animateMotion dur="8s" begin="-5s" repeatCount="indefinite" path="M-20 20 L380 420"/></circle>
+                <circle r="3.6"><animateMotion dur="6s" begin="-2.5s" repeatCount="indefinite" path="M180 440 L440 180"/></circle>
+                <circle r="3.6" fill="#ff6b7a"><animateMotion dur="9s" begin="-6s" repeatCount="indefinite" path="M420 342 H-20"/></circle>
+              </g>
               <circle r="7" fill="#fff" stroke="#D3263A" stroke-width="3">
-                <animateMotion dur="2.6s" begin="indefinite" fill="freeze" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines=".45 0 .2 1"><mpath href="#map-route"/></animateMotion>
+                <animateMotion dur="5s" begin="0s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1;1" keyTimes="0;.7;1" keySplines=".45 0 .2 1;0 0 1 1"><mpath href="#map-route"/></animateMotion>
               </circle>
               <circle cx="90" cy="306" r="11" fill="#fff"/>
               <circle cx="90" cy="306" r="4.5" fill="#19191d"/>
@@ -218,9 +227,13 @@
   <section class="z-section" id="seu-carro">
     <div class="z-wrap">
       <div class="z-head"><h2 class="z-title">O carro volta com você</h2></div>
-      <div class="z-show">
+      <div class="z-show" data-play>
         <figure class="z-show__car" data-reveal>
           <span class="z-show__shadow" aria-hidden="true"></span>
+          <span class="z-show__road" aria-hidden="true"></span>
+          <i class="z-wind" aria-hidden="true" style="--y:38%;--w:110px;--d:.9s"></i>
+          <i class="z-wind" aria-hidden="true" style="--y:52%;--w:80px;--d:1.1s;--o:-.4s"></i>
+          <i class="z-wind" aria-hidden="true" style="--y:64%;--w:130px;--d:.8s;--o:-.2s"></i>
           <svg viewBox="0 0 660 220" role="img" aria-label="Ilustração de um carro de passeio, visto de lado">
             <defs>
               <linearGradient id="car-body" x1="0" y1="0" x2="0" y2="1">
@@ -235,6 +248,7 @@
               <filter id="car-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
             </defs>
             <ellipse cx="330" cy="190" rx="290" ry="9" fill="#26262B" opacity=".18"/>
+            <g class="z-show__body">
             <path d="M104 168 A46 46 0 1 1 196 168 Z M442 168 A46 46 0 1 1 534 168 Z" fill="#2b2b31"/>
             <path fill="url(#car-body)" d="M60 168 C50 162 48 147 52 133 L58 115 C62 104 74 98 92 96 L170 92 C198 70 238 52 288 46 L384 44 C422 46 454 62 488 88 C532 92 574 98 598 108 C610 114 614 126 612 140 L608 160 C606 166 600 168 592 168 L534 168 A46 46 0 1 0 442 168 L196 168 A46 46 0 1 0 104 168 Z"/>
             <path d="M196 156 L442 156 L442 168 L196 168 Z" fill="#26262B" fill-opacity=".1"/>
@@ -249,17 +263,22 @@
             <path d="M574 108 C588 110 600 113 606 118 L578 117 Z" fill="#ffffff"/>
             <path d="M60 113 L80 109 L82 117 L61 121 Z" fill="#ff3a4f" filter="url(#car-glow)"/>
             <path d="M60 113 L80 109 L82 117 L61 121 Z" fill="#ff3a4f"/>
+            </g>
             <g>
               <circle cx="150" cy="166" r="38" fill="#1b1b1f"/>
+              <g class="z-wheel">
               <circle cx="150" cy="166" r="25" fill="url(#car-rim)"/>
               <g stroke="#6e6e78" stroke-width="3" stroke-linecap="round"><path d="M150 145V158M130 160L142 163M138 184L145 173M162 184L155 173M170 160L158 163"/></g>
               <circle cx="150" cy="166" r="6" fill="#5d5d66"/>
+              </g>
             </g>
             <g>
               <circle cx="488" cy="166" r="38" fill="#1b1b1f"/>
+              <g class="z-wheel">
               <circle cx="488" cy="166" r="25" fill="url(#car-rim)"/>
               <g stroke="#6e6e78" stroke-width="3" stroke-linecap="round"><path d="M488 145V158M468 160L480 163M476 184L483 173M500 184L493 173M508 160L496 163"/></g>
               <circle cx="488" cy="166" r="6" fill="#5d5d66"/>
+              </g>
             </g>
           </svg>
         </figure>
@@ -302,7 +321,8 @@
   </section>
 
   <!-- CHAMADA FINAL -->
-  <section class="z-section z-wine z-cta">
+  <section class="z-section z-wine z-cta" data-play>
+    <div class="z-trails" aria-hidden="true"><i style="--y:12%;--w:26vw;--d:7s;--o:-1s"></i><i class="r" style="--y:20%;--w:18vw;--d:5.5s;--o:-3s"></i><i class="b" style="--y:28%;--w:22vw;--d:6.5s;--o:-2s"></i><i style="--y:70%;--w:30vw;--d:8s;--o:-5s"></i><i class="r" style="--y:78%;--w:20vw;--d:6s;--o:-.5s"></i><i class="b" style="--y:86%;--w:24vw;--d:7.5s;--o:-4s"></i><i style="--y:93%;--w:16vw;--d:4.8s;--o:-2.5s"></i></div>
     <svg class="z-ring" viewBox="0 0 100 100" style="--ring:min(90vw,720px)" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="1"/></svg>
     <div class="z-wrap">
       <h2 class="z-title"><span class="z-line">Chegou a hora de ir para casa?</span> <span class="z-line">Seu carro vai com você.</span></h2>
