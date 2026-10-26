@@ -236,12 +236,12 @@
           </div>
           <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center flex flex-col justify-center">
             <p class="text-sm text-gray-500 uppercase tracking-wide">+ Taxa de retorno</p>
-            <p class="text-2xl font-bold mt-2"><span id="calc-mot-retorno">R$ 15,95</span></p>
+            <p class="text-2xl font-bold mt-2"><span id="calc-mot-retorno">R$ 19,14</span></p>
             <p class="text-xs text-accent font-semibold mt-2">Paga pelo cliente, 100% sua, para cobrir a sua volta</p>
           </div>
         </div>
 
-        <p class="text-xs text-gray-400 mt-4 text-center">*Este valor é apenas uma <strong class="text-gray-500">simulação estimada</strong> para corrida noturna e não representa um ganho garantido. A taxa de retorno usa o valor estimado de uma volta de aplicativo na mesma distância. O modelo de pagamento é detalhado e confirmado na etapa de seleção.</p>
+        <p class="text-xs text-gray-400 mt-4 text-center">*Este valor é apenas uma <strong class="text-gray-500">simulação estimada</strong> para corrida noturna e não representa um ganho garantido. A taxa de retorno usa o valor estimado de uma volta de aplicativo na mesma distância, com margem para a tarifa de madrugada. O modelo de pagamento é detalhado e confirmado na etapa de seleção.</p>
       </div>
     </div>
   </section>
@@ -619,8 +619,8 @@
     retornoBandeirada: 1.8,
     retornoKm: 1.3,
     retornoMin: 0.25,
-    retornoFator: 1.0,   // aumente (ex.: 1.2) para cobrir tarifa dinâmica de madrugada
-    retornoMinimo: 8,    // R$ piso da taxa de retorno (corrida mínima de app); confirmar valor real em BH
+    retornoFator: 1.2,   // +20% para cobrir tarifa dinâmica de madrugada
+    retornoMinimo: 10,   // R$ piso da taxa de retorno (antes do fator)
   };
 
   const arredondar = (v) => Math.round(v * 100) / 100;

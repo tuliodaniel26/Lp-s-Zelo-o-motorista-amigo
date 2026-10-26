@@ -196,9 +196,9 @@
 
         <div class="bg-black text-white rounded-2xl p-6 text-center">
           <p class="text-sm text-gray-400 uppercase tracking-wide">Sua volta com o ZELO · valor simulado</p>
-          <p class="text-4xl font-extrabold mt-2"><span id="calc-cli-preco">R$ 46,43</span>*</p>
-          <p class="text-xs text-gray-400 mt-2">Corrida <span id="calc-cli-corrida">R$ 30,48</span> + retorno do motorista <span id="calc-cli-retorno">R$ 15,95</span></p>
-          <p class="text-sm text-gray-400 mt-3" id="calc-cli-comparativo">Ir de app hoje e voltar amanhã para buscar o carro sai por cerca de R$ 31,90. Com o ZELO, por R$ 14,53 a mais, seu carro já amanhece na sua garagem.</p>
+          <p class="text-4xl font-extrabold mt-2"><span id="calc-cli-preco">R$ 49,62</span>*</p>
+          <p class="text-xs text-gray-400 mt-2">Corrida <span id="calc-cli-corrida">R$ 30,48</span> + retorno do motorista <span id="calc-cli-retorno">R$ 19,14</span></p>
+          <p class="text-sm text-gray-400 mt-3" id="calc-cli-comparativo">Ir de app hoje e voltar amanhã para buscar o carro sai por cerca de R$ 31,90. Com o ZELO, por R$ 17,72 a mais, seu carro já amanhece na sua garagem.</p>
         </div>
 
         <p class="text-xs text-gray-400 mt-4 text-center">*Este valor é apenas uma <strong class="text-gray-500">simulação estimada</strong> para corrida noturna e não representa o preço definitivo. A taxa de retorno cobre a volta do motorista e vai integralmente para ele. O valor final é sempre confirmado com você no atendimento pelo WhatsApp, antes da corrida.</p>
@@ -436,8 +436,8 @@
     retornoBandeirada: 1.8,
     retornoKm: 1.3,
     retornoMin: 0.25,
-    retornoFator: 1.0,   // aumente (ex.: 1.2) para cobrir tarifa dinâmica de madrugada
-    retornoMinimo: 8,    // R$ piso da taxa de retorno (corrida mínima de app); confirmar valor real em BH
+    retornoFator: 1.2,   // +20% para cobrir tarifa dinâmica de madrugada
+    retornoMinimo: 10,   // R$ piso da taxa de retorno (antes do fator)
   };
 
   const arredondar = (v) => Math.round(v * 100) / 100;
