@@ -56,7 +56,7 @@
           Dirija sem ter carro. Ganhe por corrida.
         </h1>
         <p class="text-lg lg:text-xl text-gray-500 leading-relaxed mb-8 max-w-lg">
-          Você dirige o carro do cliente, não o seu. Ganhe de 2,5 a 3 vezes mais por corrida do que em aplicativos terceiros, com flexibilidade de horário.
+          Você dirige o carro do cliente, não o seu. Fica com 75% de cada corrida e ainda recebe a taxa de retorno inteira, paga pelo cliente. Tudo com flexibilidade de horário.
         </p>
         <a href="#candidatura"
            class="inline-flex items-center gap-2 bg-black text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-accent transition-colors duration-300">
@@ -115,8 +115,8 @@
           <div class="bg-white/10 rounded-full p-3 w-fit">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
           </div>
-          <h3 class="font-semibold text-lg mt-4">Ganha 2,5 a 3x mais por corrida</h3>
-          <p class="text-white/80 mt-2">Você recebe entre 2,5 e 3 vezes o valor pago em aplicativos terceiros por corrida — o suficiente para cobrir seu próprio retorno com folga, sem depender de ninguém.</p>
+          <h3 class="font-semibold text-lg mt-4">A volta não sai do seu bolso</h3>
+          <p class="text-white/80 mt-2">Além de 75% do valor da corrida, você recebe 100% da taxa de retorno, que o cliente paga para cobrir a sua volta até a região de plantão.</p>
         </div>
 
         <div class="reveal bg-white rounded-2xl p-6 border border-gray-200 hover:border-gray-900 transition-colors duration-300">
@@ -196,7 +196,7 @@
 
       <div class="mt-14 bg-white/10 border border-white/20 rounded-2xl p-8 reveal">
         <h3 class="font-semibold text-lg mb-2">E depois de deixar o cliente, como eu volto?</h3>
-        <p class="text-white/70">Por conta própria — e isso não pesa no seu bolso. Como o ZELO paga entre 2,5 e 3 vezes o valor de uma corrida em aplicativos terceiros, o custo do seu retorno se torna irrisório perto do que você acabou de ganhar. Você decide como e quando voltar.</p>
+        <p class="text-white/70">Com a taxa de retorno. Ela é cobrada do cliente junto com a corrida, calculada pelo valor estimado de uma volta de aplicativo na mesma distância, e vai inteira para você. O que você ganhou na corrida fica com você.</p>
       </div>
     </div>
   </section>
@@ -206,7 +206,7 @@
     <div class="max-w-[700px] mx-auto">
       <div class="text-center mb-10 reveal">
         <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">Simule quanto você ganha por corrida</h2>
-        <p class="text-gray-500 mt-4 text-lg">Informe a distância e o tempo de uma corrida e veja quanto entra no seu bolso — comparado a um app comum.</p>
+        <p class="text-gray-500 mt-4 text-lg">Informe a distância e o tempo de uma corrida e veja quanto fica com você, com a sua volta já paga.</p>
       </div>
 
       <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 reveal">
@@ -230,18 +230,18 @@
 
         <div class="grid sm:grid-cols-2 gap-4">
           <div class="bg-black text-white rounded-2xl p-6 text-center">
-            <p class="text-sm text-gray-400 uppercase tracking-wide">Você recebe · valor simulado</p>
+            <p class="text-sm text-gray-400 uppercase tracking-wide">Fica com você · valor simulado</p>
             <p class="text-3xl lg:text-4xl font-extrabold mt-2 text-accent"><span id="calc-mot-liquido">R$ 22,86</span>*</p>
-            <p class="text-xs text-gray-400 mt-2">75% do valor da corrida</p>
+            <p class="text-xs text-gray-400 mt-2">75% de uma corrida de <span id="calc-mot-corrida">R$ 30,48</span></p>
           </div>
           <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center flex flex-col justify-center">
-            <p class="text-sm text-gray-500 uppercase tracking-wide">Mesma corrida em app comum</p>
-            <p class="text-2xl font-bold mt-2 text-gray-400"><span id="calc-mot-outro">R$ 15,95</span></p>
-            <p class="text-xs text-accent font-semibold mt-2" id="calc-mot-diferenca">+R$ 6,91 a mais com o ZELO</p>
+            <p class="text-sm text-gray-500 uppercase tracking-wide">+ Taxa de retorno</p>
+            <p class="text-2xl font-bold mt-2"><span id="calc-mot-retorno">R$ 15,95</span></p>
+            <p class="text-xs text-accent font-semibold mt-2">Paga pelo cliente, 100% sua, para cobrir a sua volta</p>
           </div>
         </div>
 
-        <p class="text-xs text-gray-400 mt-4 text-center">*Este valor é apenas uma <strong class="text-gray-500">simulação estimada</strong> para corrida noturna e não representa um ganho garantido. O modelo de pagamento é detalhado e confirmado na etapa de seleção.</p>
+        <p class="text-xs text-gray-400 mt-4 text-center">*Este valor é apenas uma <strong class="text-gray-500">simulação estimada</strong> para corrida noturna e não representa um ganho garantido. A taxa de retorno usa o valor estimado de uma volta de aplicativo na mesma distância. O modelo de pagamento é detalhado e confirmado na etapa de seleção.</p>
       </div>
     </div>
   </section>
@@ -375,7 +375,7 @@
             <span>Como funciona o pagamento?</span>
             <span class="faq-icon text-2xl text-gray-400">+</span>
           </button>
-          <div class="faq-content"><p class="text-gray-500 pb-4">Você recebe entre 2,5 e 3 vezes o valor de uma corrida equivalente em aplicativos terceiros. O valor exato por corrida é apresentado na etapa de seleção.</p></div>
+          <div class="faq-content"><p class="text-gray-500 pb-4">Você fica com 75% do valor de cada corrida e recebe 100% da taxa de retorno paga pelo cliente, que cobre a sua volta. O modelo de pagamento é detalhado e confirmado na etapa de seleção.</p></div>
         </div>
 
         <div class="faq-item reveal border border-gray-200 rounded-2xl px-6 py-2">
@@ -613,54 +613,49 @@
     precoMin: 0.30,      // R$ por minuto
     corridaMinima: 18,   // R$ nenhuma corrida sai abaixo disso
     adicNoturno: 0.15,   // 15% (operação é 100% noturna)
-    comissao: 0.25,      // ZELO fica com 25%, motorista com 75%
-    // Benchmark apps terceiros (referência: tabela de mercado BH 2026)
-    outroBandeirada: 1.8,
-    outroKm: 1.3,
-    outroMin: 0.25,
+    comissao: 0.25,      // ZELO fica com 25% da corrida, motorista com 75%
+    // Taxa de retorno: cobrada do cliente e repassada 100% ao motorista (sem comissão).
+    // Base = preço estimado de um app comum na mesma distância (tabela de mercado BH 2026).
+    retornoBandeirada: 1.8,
+    retornoKm: 1.3,
+    retornoMin: 0.25,
+    retornoFator: 1.0,   // aumente (ex.: 1.2) para cobrir tarifa dinâmica de madrugada
+    retornoMinimo: 8,    // R$ piso da taxa de retorno (corrida mínima de app); confirmar valor real em BH
   };
 
-  function calcularPrecoZelo(km, minutos) {
+  const arredondar = (v) => Math.round(v * 100) / 100;
+
+  function calcularCorrida(km, minutos) {
     const subtotal = TARIFA.bandeirada + (km * TARIFA.precoKm) + (minutos * TARIFA.precoMin);
-    const adicNoturno = subtotal * TARIFA.adicNoturno;
-    const precoAntesMinima = subtotal + adicNoturno;
-    return Math.max(precoAntesMinima, TARIFA.corridaMinima);
+    const comNoturno = subtotal * (1 + TARIFA.adicNoturno);
+    return arredondar(Math.max(comNoturno, TARIFA.corridaMinima));
   }
 
-  function calcularPrecoOutro(km, minutos) {
-    return TARIFA.outroBandeirada + (km * TARIFA.outroKm) + (minutos * TARIFA.outroMin);
+  function calcularRetorno(km, minutos) {
+    const app = TARIFA.retornoBandeirada + (km * TARIFA.retornoKm) + (minutos * TARIFA.retornoMin);
+    return arredondar(Math.max(app, TARIFA.retornoMinimo) * TARIFA.retornoFator);
   }
 
   function formatarReal(valor) {
-    return 'R$ ' + valor.toFixed(2).replace('.', ',');
+    return 'R$\u00a0' + valor.toFixed(2).replace('.', ',');
   }
 
   const motKm = document.getElementById('calc-mot-km');
   const motMin = document.getElementById('calc-mot-min');
   const motLiquido = document.getElementById('calc-mot-liquido');
-  const motOutro = document.getElementById('calc-mot-outro');
-  const motDiferenca = document.getElementById('calc-mot-diferenca');
+  const motCorrida = document.getElementById('calc-mot-corrida');
+  const motRetorno = document.getElementById('calc-mot-retorno');
 
   function atualizarCalcMotorista() {
-    const km = parseFloat(motKm.value) || 0;
-    const minutos = parseFloat(motMin.value) || 0;
-    const precoZelo = calcularPrecoZelo(km, minutos);
-    const liquidoMotorista = precoZelo * (1 - TARIFA.comissao); // motorista fica com 75%
-    const precoOutro = calcularPrecoOutro(km, minutos);
-    const diferenca = liquidoMotorista - precoOutro;
+    const km = Math.max(parseFloat(motKm.value) || 0, 0);
+    const minutos = Math.max(parseFloat(motMin.value) || 0, 0);
+    const corrida = calcularCorrida(km, minutos);
+    const parteMotorista = arredondar(corrida * (1 - TARIFA.comissao)); // 75% da corrida
+    const retorno = calcularRetorno(km, minutos);                        // 100% do motorista
 
-    motLiquido.textContent = formatarReal(liquidoMotorista);
-    motOutro.textContent = formatarReal(precoOutro);
-
-    if (diferenca > 0) {
-      motDiferenca.textContent = `+${formatarReal(diferenca)} a mais com o ZELO`;
-      motDiferenca.classList.remove('text-gray-400');
-      motDiferenca.classList.add('text-accent');
-    } else {
-      motDiferenca.textContent = 'Compare o valor líquido por corrida';
-      motDiferenca.classList.remove('text-accent');
-      motDiferenca.classList.add('text-gray-400');
-    }
+    motLiquido.textContent = formatarReal(parteMotorista);
+    motCorrida.textContent = formatarReal(corrida);
+    motRetorno.textContent = formatarReal(retorno);
   }
 
   // Botão Calcular + Enter + atualização automática ao digitar
