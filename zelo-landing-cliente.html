@@ -194,7 +194,7 @@
       <div class="z-calc">
         <div class="z-calc__intro" data-reveal>
           <h2 class="z-title">Simule o valor da sua volta</h2>
-          <p class="z-lead">Faça uma estimativa rápida da distância até sua casa e veja quanto custa chegar em segurança, com o seu próprio carro. É só uma simulação; o valor exato é combinado no WhatsApp.</p>
+          <p class="z-lead">Faça uma estimativa rápida da distância até sua casa e veja quanto custa o serviço exclusivo do ZELO: chegar em segurança, com o seu próprio carro. É só uma simulação; o valor exato é combinado no WhatsApp.</p>
         </div>
         <div class="z-calc__panel">
           <div class="z-calc__inputs">
@@ -210,13 +210,14 @@
           <button id="btn-calc-cli" class="z-btn z-btn--block" type="button">Calcular</button>
           <div class="z-calc__result" aria-live="polite">
             <p class="z-calc__label">Sua volta com o ZELO, valor simulado</p>
-            <p class="z-calc__value"><span id="calc-cli-preco">R$ 49,62</span><sup>*</sup></p>
+            <p class="z-calc__value"><span id="calc-cli-preco">R$ 53,12</span><sup>*</sup></p>
             <div class="z-calc__rows">
               <div class="z-calc__row"><span>Corrida</span><strong id="calc-cli-corrida">R$ 30,48</strong></div>
-              <div class="z-calc__row"><span>Retorno do motorista</span><strong id="calc-cli-retorno">R$ 19,14</strong></div>
+              <div class="z-calc__row"><span>Deslocamento de retorno do motorista</span><strong id="calc-cli-retorno">R$ 19,14</strong></div>
+              <div class="z-calc__row"><span>Taxa do serviço exclusivo ZELO</span><strong id="calc-cli-taxa">R$ 3,50</strong></div>
             </div>
-            <p class="z-calc__note" id="calc-cli-comparativo">Ir de app hoje e voltar amanhã para buscar o carro sai por cerca de R$ 31,90. Com o ZELO, por R$ 17,72 a mais, seu carro já amanhece na sua garagem.</p>
-            <p class="z-calc__fine">*Este valor é apenas uma <strong>simulação estimada</strong> para corrida noturna e não representa o preço definitivo. A taxa de retorno cobre a volta do motorista e vai integralmente para ele. O valor final é sempre confirmado com você no atendimento pelo WhatsApp, antes da corrida.</p>
+            <p class="z-calc__note" id="calc-cli-comparativo">Ir de app hoje e voltar amanhã para buscar o carro sai por cerca de R$ 31,90. Com o ZELO, serviço exclusivo, por R$ 21,22 a mais, seu carro já amanhece na sua garagem.</p>
+            <p class="z-calc__fine">*Este valor é apenas uma <strong>simulação estimada</strong> para corrida noturna e não representa o preço definitivo. O valor inclui o deslocamento de retorno do motorista e a taxa do serviço exclusivo ZELO. O valor final é sempre confirmado com você no atendimento pelo WhatsApp, antes da corrida.</p>
           </div>
         </div>
       </div>
@@ -313,7 +314,7 @@
       <div class="z-faq">
         <details>
           <summary>Quanto custa uma corrida ZELO?<span class="z-faq__icon" aria-hidden="true"></span></summary>
-          <div class="z-faq__body"><p>O valor depende da distância até sua casa e tem duas partes: a corrida e a taxa de retorno do motorista. Use o simulador acima para ter uma estimativa; o valor final é confirmado no WhatsApp antes de a corrida começar.</p></div>
+          <div class="z-faq__body"><p>O valor depende da distância até sua casa e tem três partes: a corrida, o deslocamento de retorno do motorista e a taxa do serviço exclusivo ZELO, um valor fixo por volta. Use o simulador acima para ter uma estimativa; o valor final é confirmado no WhatsApp antes de a corrida começar.</p></div>
         </details>
         <details>
           <summary>Vocês atendem em qualquer horário da noite?<span class="z-faq__icon" aria-hidden="true"></span></summary>
@@ -325,7 +326,7 @@
         </details>
         <details>
           <summary>O motorista fica sem transporte depois de me levar?<span class="z-faq__icon" aria-hidden="true"></span></summary>
-          <div class="z-faq__body"><p>Não. O valor da sua volta inclui uma taxa de retorno que vai inteira para o motorista e cobre a volta dele. Ele organiza o retorno por conta própria, sem nenhum impacto no seu atendimento.</p></div>
+          <div class="z-faq__body"><p>Não. O valor da sua volta já inclui o deslocamento de retorno do motorista. Ele organiza a própria volta, sem nenhum impacto no seu atendimento.</p></div>
         </details>
         <details>
           <summary>Funciona em toda Belo Horizonte?<span class="z-faq__icon" aria-hidden="true"></span></summary>
@@ -391,14 +392,16 @@ const TARIFA = {
     precoMin: 0.30,      // R$ por minuto
     corridaMinima: 18,   // R$ nenhuma corrida sai abaixo disso
     adicNoturno: 0.15,   // 15% (operação é 100% noturna)
-    comissao: 0.25,      // ZELO fica com 25% da corrida, motorista com 75%
-    // Taxa de retorno: cobrada do cliente e repassada 100% ao motorista (sem comissão).
+    comissao: 0.30,      // ZELO fica com 30% da corrida, motorista com 70%
+    // Deslocamento de retorno do motorista: cobrado do cliente junto com a corrida.
     // Base = preço estimado de um app comum na mesma distância (tabela de mercado BH 2026).
     retornoBandeirada: 1.8,
     retornoKm: 1.3,
     retornoMin: 0.25,
     retornoFator: 1.2,   // +20% para cobrir tarifa dinâmica de madrugada
-    retornoMinimo: 10,   // R$ piso da taxa de retorno (antes do fator)
+    retornoMinimo: 10,   // R$ piso do deslocamento de retorno (antes do fator)
+    retornoMotorista: 0.90, // motorista recebe 90% do deslocamento de retorno, ZELO 10%
+    taxaServico: 3.50,   // R$ fixo por volta, cobrado do cliente, 100% ZELO (taxa do serviço exclusivo)
   };
 
   const arredondar = (v) => Math.round(v * 100) / 100;
@@ -428,6 +431,7 @@ const TARIFA = {
   const cliPreco = document.getElementById('calc-cli-preco');
   const cliCorrida = document.getElementById('calc-cli-corrida');
   const cliRetorno = document.getElementById('calc-cli-retorno');
+  const cliTaxa = document.getElementById('calc-cli-taxa');
   const cliComparativo = document.getElementById('calc-cli-comparativo');
 
   function atualizarCalcCliente() {
@@ -435,7 +439,8 @@ const TARIFA = {
     const minutos = Math.max(parseFloat(cliMin.value) || 0, 0);
     const corrida = calcularCorrida(km, minutos);
     const retorno = calcularRetorno(km, minutos);
-    const total = arredondar(corrida + retorno);
+    const taxa = TARIFA.taxaServico;
+    const total = arredondar(corrida + retorno + taxa);
     // Alternativa real do cliente: app para casa hoje + app de volta amanhã para buscar o carro
     const doisApps = arredondar(calcularApp(km, minutos) * 2);
     const diferenca = arredondar(total - doisApps);
@@ -443,13 +448,14 @@ const TARIFA = {
     cliPreco.textContent = formatarReal(total);
     cliCorrida.textContent = formatarReal(corrida);
     cliRetorno.textContent = formatarReal(retorno);
+    cliTaxa.textContent = formatarReal(taxa);
 
     if (diferenca > 0) {
       cliComparativo.textContent =
-        `Ir de app hoje e voltar amanhã para buscar o carro sai por cerca de ${formatarReal(doisApps)}. Com o ZELO, por ${formatarReal(diferenca)} a mais, seu carro já amanhece na sua garagem.`;
+        `Ir de app hoje e voltar amanhã para buscar o carro sai por cerca de ${formatarReal(doisApps)}. Com o ZELO, serviço exclusivo, por ${formatarReal(diferenca)} a mais, seu carro já amanhece na sua garagem.`;
     } else {
       cliComparativo.textContent =
-        `Ir de app hoje e voltar amanhã para buscar o carro sai por cerca de ${formatarReal(doisApps)}. Com o ZELO, seu carro já amanhece na sua garagem.`;
+        `Ir de app hoje e voltar amanhã para buscar o carro sai por cerca de ${formatarReal(doisApps)}. Com o ZELO, serviço exclusivo, seu carro já amanhece na sua garagem.`;
     }
   }
 

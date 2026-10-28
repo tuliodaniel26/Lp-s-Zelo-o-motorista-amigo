@@ -109,7 +109,7 @@
           <span class="l"><span style="--i:0">Dirija sem ter carro.</span></span>
           <span class="l"><span style="--i:1">Ganhe por corrida.</span></span>
         </h1>
-        <p class="z-hero__text">Você dirige o carro do cliente, não o seu. Fica com 75% de cada corrida e ainda recebe a taxa de retorno inteira, paga pelo cliente. Tudo com flexibilidade de horário.</p>
+        <p class="z-hero__text">Você dirige o carro do cliente, não o seu. Fica com 70% de cada corrida e ainda recebe 90% do deslocamento de retorno, pago pelo cliente. Tudo com flexibilidade de horário.</p>
         <a class="z-hero__action" href="#candidatura">
           <span class="z-dot"><svg class="z-ico"><use href="#i-arrow-down"/></svg></span>
           <span>Quero me candidatar</span>
@@ -142,8 +142,8 @@
         </article>
         <article class="z-card" data-reveal style="--delay:0.12s">
           <div class="z-tile z-tile--red" style="--acc:#fff"><svg class="z-ico"><use href="#i-money"/></svg></div>
-          <h3>A volta não sai do seu bolso</h3>
-          <p>Além de 75% do valor da corrida, você recebe 100% da taxa de retorno, que o cliente paga para cobrir a sua volta até a região de plantão.</p>
+          <h3>Sua volta já vem no preço</h3>
+          <p>Além de 70% do valor da corrida, você recebe 90% do deslocamento de retorno pago pelo cliente, calculado pelo valor de uma volta de aplicativo na mesma distância, com margem para a madrugada.</p>
         </article>
         <article class="z-card" data-reveal style="--delay:0.24s">
           <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-clock"/></svg></div>
@@ -202,7 +202,7 @@
       </div>
       <div class="z-band" data-reveal>
         <h3>E depois de deixar o cliente, como eu volto?</h3>
-        <p>Com a taxa de retorno. Ela é cobrada do cliente junto com a corrida, calculada pelo valor estimado de uma volta de aplicativo na mesma distância, e vai inteira para você. O que você ganhou na corrida fica com você.</p>
+        <p>Com o deslocamento de retorno. Ele é cobrado do cliente junto com a corrida e calculado pelo valor estimado de uma volta de aplicativo na mesma distância, com margem para a madrugada. Você recebe 90% desse valor, além de 70% da corrida.</p>
       </div>
     </div>
     <span class="z-watermark" aria-hidden="true">Plantão</span>
@@ -214,7 +214,7 @@
       <div class="z-calc">
         <div class="z-calc__intro" data-reveal>
           <h2 class="z-title">Simule quanto você ganha por corrida</h2>
-          <p class="z-lead">Informe a distância e o tempo de uma corrida e veja quanto fica com você, com a sua volta já paga.</p>
+          <p class="z-lead">Informe a distância e o tempo de uma corrida e veja uma estimativa do que você recebe e do que sobra depois de pagar a sua volta.</p>
         </div>
         <div class="z-calc__panel">
           <div class="z-calc__inputs">
@@ -231,17 +231,17 @@
           <div class="z-calc__result" aria-live="polite">
             <div class="z-calc__pair">
               <div>
-                <p class="z-calc__label">Fica com você, valor simulado</p>
-                <p class="z-calc__value z-calc__value--red"><span id="calc-mot-liquido">R$ 22,86</span><sup>*</sup></p>
-                <small>75% de uma corrida de <span id="calc-mot-corrida">R$ 30,48</span></small>
+                <p class="z-calc__label">Você recebe, valor simulado</p>
+                <p class="z-calc__value z-calc__value--red"><span id="calc-mot-recebe">R$ 38,57</span><sup>*</sup></p>
+                <small>70% da corrida (<span id="calc-mot-corrida">R$ 21,34</span>) + 90% do deslocamento de retorno (<span id="calc-mot-retorno">R$ 17,23</span>), pago pelo cliente</small>
               </div>
               <div>
-                <p class="z-calc__label">+ Taxa de retorno</p>
-                <p class="z-calc__value"><span id="calc-mot-retorno">R$ 19,14</span></p>
-                <small>Paga pelo cliente, 100% sua, para cobrir a sua volta</small>
+                <p class="z-calc__label">Depois de pagar sua volta de aplicativo (~<span id="calc-mot-app">R$ 15,95</span>), sobra</p>
+                <p class="z-calc__value">~<span id="calc-mot-sobra">R$ 22,62</span></p>
+                <small>Estimativa sem tarifa dinâmica; o custo real da sua volta pode variar</small>
               </div>
             </div>
-            <p class="z-calc__fine">*Este valor é apenas uma <strong>simulação estimada</strong> para corrida noturna e não representa um ganho garantido. A taxa de retorno usa o valor estimado de uma volta de aplicativo na mesma distância, com margem para a tarifa de madrugada. O modelo de pagamento é detalhado e confirmado na etapa de seleção.</p>
+            <p class="z-calc__fine">*Este valor é apenas uma <strong>simulação estimada</strong> para corrida noturna e não representa um ganho garantido. O deslocamento de retorno usa o valor estimado de uma volta de aplicativo na mesma distância, com margem para a tarifa de madrugada; o custo real da sua volta pode variar, por exemplo com tarifa dinâmica alta. O modelo de pagamento é detalhado e confirmado na etapa de seleção.</p>
           </div>
         </div>
       </div>
@@ -269,7 +269,7 @@
         <article class="z-card" data-reveal>
           <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-money"/></svg></div>
           <h3>Pagamento transparente</h3>
-          <p>Você sabe exatamente quanto recebe por corrida, sem surpresa.</p>
+          <p>Você vê o valor de cada corrida antes de aceitar. Sem surpresa.</p>
         </article>
         <article class="z-card" data-reveal style="--delay:0.12s">
           <div class="z-tile" style="--acc:#D3263A"><svg class="z-ico"><use href="#i-voice"/></svg></div>
@@ -352,7 +352,7 @@
       <div class="z-faq">
         <details>
           <summary>Como funciona o pagamento?<span class="z-faq__icon" aria-hidden="true"></span></summary>
-          <div class="z-faq__body"><p>Você fica com 75% do valor de cada corrida e recebe 100% da taxa de retorno paga pelo cliente, que cobre a sua volta. O modelo de pagamento é detalhado e confirmado na etapa de seleção.</p></div>
+          <div class="z-faq__body"><p>Você fica com 70% do valor de cada corrida e recebe 90% do deslocamento de retorno pago pelo cliente, calculado pelo valor estimado de uma volta de aplicativo na mesma distância. O modelo de pagamento é detalhado e confirmado na etapa de seleção.</p></div>
         </details>
         <details>
           <summary>Preciso ter carro próprio?<span class="z-faq__icon" aria-hidden="true"></span></summary>
@@ -547,14 +547,16 @@
     precoMin: 0.30,      // R$ por minuto
     corridaMinima: 18,   // R$ nenhuma corrida sai abaixo disso
     adicNoturno: 0.15,   // 15% (operação é 100% noturna)
-    comissao: 0.25,      // ZELO fica com 25% da corrida, motorista com 75%
-    // Taxa de retorno: cobrada do cliente e repassada 100% ao motorista (sem comissão).
+    comissao: 0.30,      // ZELO fica com 30% da corrida, motorista com 70%
+    // Deslocamento de retorno do motorista: cobrado do cliente junto com a corrida.
     // Base = preço estimado de um app comum na mesma distância (tabela de mercado BH 2026).
     retornoBandeirada: 1.8,
     retornoKm: 1.3,
     retornoMin: 0.25,
     retornoFator: 1.2,   // +20% para cobrir tarifa dinâmica de madrugada
-    retornoMinimo: 10,   // R$ piso da taxa de retorno (antes do fator)
+    retornoMinimo: 10,   // R$ piso do deslocamento de retorno (antes do fator)
+    retornoMotorista: 0.90, // motorista recebe 90% do deslocamento de retorno, ZELO 10%
+    taxaServico: 3.50,   // R$ fixo por volta, cobrado do cliente, 100% ZELO (taxa do serviço exclusivo)
   };
 
   const arredondar = (v) => Math.round(v * 100) / 100;
@@ -581,20 +583,27 @@
 
   const motKm = document.getElementById('calc-mot-km');
   const motMin = document.getElementById('calc-mot-min');
-  const motLiquido = document.getElementById('calc-mot-liquido');
+  const motRecebe = document.getElementById('calc-mot-recebe');
   const motCorrida = document.getElementById('calc-mot-corrida');
   const motRetorno = document.getElementById('calc-mot-retorno');
+  const motApp = document.getElementById('calc-mot-app');
+  const motSobra = document.getElementById('calc-mot-sobra');
 
   function atualizarCalcMotorista() {
     const km = Math.max(parseFloat(motKm.value) || 0, 0);
     const minutos = Math.max(parseFloat(motMin.value) || 0, 0);
     const corrida = calcularCorrida(km, minutos);
-    const parteMotorista = arredondar(corrida * (1 - TARIFA.comissao)); // 75% da corrida
-    const retorno = calcularRetorno(km, minutos);                        // 100% do motorista
+    const parteCorrida = arredondar(corrida * (1 - TARIFA.comissao));                         // 70% da corrida
+    const parteRetorno = arredondar(calcularRetorno(km, minutos) * TARIFA.retornoMotorista);  // 90% do deslocamento
+    const recebe = arredondar(parteCorrida + parteRetorno);
+    const voltaApp = calcularApp(km, minutos); // estimativa de uma volta de app, sem tarifa dinâmica
+    const sobra = arredondar(recebe - voltaApp);
 
-    motLiquido.textContent = formatarReal(parteMotorista);
-    motCorrida.textContent = formatarReal(corrida);
-    motRetorno.textContent = formatarReal(retorno);
+    motRecebe.textContent = formatarReal(recebe);
+    motCorrida.textContent = formatarReal(parteCorrida);
+    motRetorno.textContent = formatarReal(parteRetorno);
+    motApp.textContent = formatarReal(voltaApp);
+    motSobra.textContent = formatarReal(sobra);
   }
 
   // Botão Calcular + Enter + atualização automática ao digitar

@@ -21,6 +21,12 @@ formularios/apps-script.gs     → Backend dos formulários (Google Apps Script 
 
 - **Cores:** no topo de `assets/zelo.css` (`:root`). `--z-red` é o vermelho dos botões; `--z-wine` é o bordô da marca.
 - **Tarifas das calculadoras:** objeto `TARIFA` no fim de `zelo-landing-cliente.html` e de `zelo-landing-motorista.html` (os dois precisam ficar iguais).
+  - Preço ao cliente = corrida + deslocamento de retorno + `taxaServico`.
+  - Corrida: `bandeirada` + `precoKm` × km + `precoMin` × min, com `adicNoturno` e piso `corridaMinima`. `comissao` (0.30) é a parte do ZELO; o motorista fica com 70% da corrida.
+  - Deslocamento de retorno: volta estimada de app (`retornoBandeirada` + `retornoKm` × km + `retornoMin` × min, piso `retornoMinimo`) × `retornoFator`. `retornoMotorista` (0.90) é a parte do motorista; o ZELO fica com 10%.
+  - `taxaServico` (R$ 3,50): taxa do serviço exclusivo ZELO, valor fixo por volta, cobrado do cliente e 100% do ZELO.
+  - Conferência (8 km / 15 min): cliente R$ 53,12 (corrida R$ 30,48 + retorno R$ 19,14 + taxa R$ 3,50); motorista recebe R$ 38,57 (R$ 21,34 + R$ 17,23).
+  - O Pacote Parceiro (`zelo-landing-page.html`) cita "R$ 53,12" como preço avulso de 8 km / 15 min: se a tarifa mudar, atualize esse texto também.
 - **Cabeçalho, menu, ícones e rodapé** se repetem nas 4 páginas: altere nas 4.
 - **Animações:** quem ativa "reduzir movimento" no celular vê o site sem animação; a estrada do topo pausa quando sai da tela.
 
